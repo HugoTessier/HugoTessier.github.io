@@ -20,6 +20,11 @@
 <div id="mynetwork"></div>
 <div id="description"></div>
 <script type="text/javascript">
+console.log("aaa");
+    $.getJSON('./nodes', data => {
+        console.log(data);
+    });
+
     // create an array with nodes
     var nodes = new vis.DataSet([
       { id: 1, label: "Node 1" },
