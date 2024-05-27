@@ -1,0 +1,8 @@
+{
+  "id": "B",
+  "label": "Node B",
+  "description": "I am B",
+  "edge_to": [
+    "B"
+  ]
+}
