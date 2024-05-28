@@ -17,7 +17,7 @@
 <body>
 <div id="buttons">
     <button id="french_button" onclick="toFrench()">French</button>
-    <button id="english_button" onclick="toEnglish()">English</button>
+    <button id="english_button" onclick="toEnglish()" style='border-style:inset'>English</button>
 </div>
 <div id="mynetwork"></div>
 <div id="description" style="display:none">
@@ -52,8 +52,15 @@
         current_description = raw_data[id].vulgarized;
         current_id = id;
 
+        document.getElementById("vulgarized_button").style.borderStyle = "outset";
+        document.getElementById("definition_button").style.borderStyle = "outset";
+        document.getElementById("details_button").style.borderStyle = "outset";
+        document.getElementById("links_button").style.borderStyle = "outset";
+        document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+
         if("vulgarized" in current_data) {
             document.getElementById("vulgarized_button").style.display = "inline-block";
+            document.getElementById("vulgarized_button").style.borderStyle = "inset";
             if(mode == "english") {
                 document.getElementById("description_content").textContent = current_description.english;
             } else {
@@ -90,6 +97,12 @@
 
     function showVulgarized() {
         if (current_description != null) {
+            document.getElementById("vulgarized_button").style.borderStyle = "inset";
+            document.getElementById("definition_button").style.borderStyle = "outset";
+            document.getElementById("details_button").style.borderStyle = "outset";
+            document.getElementById("links_button").style.borderStyle = "outset";
+            document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+
             current_description = raw_data[current_id].vulgarized;
             if(mode == "english") {
                 document.getElementById("description_content").textContent = current_description.english;
@@ -101,6 +114,12 @@
 
     function showDefinition() {
         if (current_description != null) {
+            document.getElementById("vulgarized_button").style.borderStyle = "outset";
+            document.getElementById("definition_button").style.borderStyle = "inset";
+            document.getElementById("details_button").style.borderStyle = "outset";
+            document.getElementById("links_button").style.borderStyle = "outset";
+            document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+
             current_description = raw_data[current_id].definition;
             if(mode == "english") {
                 document.getElementById("description_content").textContent = current_description.english;
@@ -112,6 +131,12 @@
 
     function showDetails() {
         if (current_description != null) {
+            document.getElementById("vulgarized_button").style.borderStyle = "outset";
+            document.getElementById("definition_button").style.borderStyle = "outset";
+            document.getElementById("details_button").style.borderStyle = "inset";
+            document.getElementById("links_button").style.borderStyle = "outset";
+            document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+
             current_description = raw_data[current_id].details;
             if(mode == "english") {
                 document.getElementById("description_content").textContent = current_description.english;
@@ -123,6 +148,12 @@
 
     function showLinks() {
         if (current_description != null) {
+            document.getElementById("vulgarized_button").style.borderStyle = "outset";
+            document.getElementById("definition_button").style.borderStyle = "outset";
+            document.getElementById("details_button").style.borderStyle = "outset";
+            document.getElementById("links_button").style.borderStyle = "inset";
+            document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+
             current_description = raw_data[current_id].links;
 
             let ul = `<ul style="list-style-type:none;padding:0;margin:0">${current_description.map(data =>
@@ -132,12 +163,20 @@
     }
 
     function showLinkedNodes() {
+        document.getElementById("vulgarized_button").style.borderStyle = "outset";
+        document.getElementById("definition_button").style.borderStyle = "outset";
+        document.getElementById("details_button").style.borderStyle = "outset";
+        document.getElementById("links_button").style.borderStyle = "outset";
+        document.getElementById("linked_nodes_button").style.borderStyle = "inset";
         document.getElementById("description_content").textContent = "WIP";
     }
 
 
     function toFrench() {
         mode = "french";
+        document.getElementById("english_button").style.borderStyle = "outset";
+        document.getElementById("french_button").style.borderStyle = "inset";
+
         document.getElementById("french_button").textContent = "Français";
         document.getElementById("english_button").textContent = "Anglais";
 
@@ -161,6 +200,9 @@
 
     function toEnglish() {
         mode = "english";
+        document.getElementById("english_button").style.borderStyle = "inset";
+        document.getElementById("french_button").style.borderStyle = "outset";
+
         document.getElementById("french_button").textContent = "French";
         document.getElementById("english_button").textContent = "English";
 
