@@ -15,14 +15,25 @@
     </style>
 </head>
 <body>
+<div id="buttons">
+    <button id="french_button" onclick="toFrench()">French</button>
+    <button id="english_button" onclick="toEnglish()">English</button>
+</div>
 <div id="mynetwork"></div>
 <div id="description"></div>
 <script type="text/javascript">
 
-
+    var raw_data = [];
     var nodes = [];
     var edges = [];
     var ids = [];
+    var mode = "english";
+    var current_description = null;
+    var description_container = null;
+    var nodes_dataset = null;
+    var edges_dataset = null;
+    var network = null;
+    var data = null;
 
     fetch('all_nodes.json')
     .then(response => response.json())
@@ -32,6 +43,9 @@
             return fetch(fileName)
             .then(response => response.json())
             .then(fileData => {
+                if (!Array.isArray(raw_data)) {
+                    raw_data = [];
+                }
                 if (!Array.isArray(nodes)) {
                     nodes = [];
                 }
@@ -41,7 +55,8 @@
                 if (!Array.isArray(ids)) {
                     ids = [];
                 }
-                nodes.push({id: fileData.id, label: fileData.label});
+                raw_data.push(fileData);
+                nodes.push({id: fileData.id, label: fileData.label.english});
                 ids.push(fileData.id);
                 for (let edge_data of fileData.edge_to) {
                     edges.push({from: fileData.id, to: edge_data});
@@ -51,26 +66,67 @@
         return Promise.all(fetchPromises);
     })
     .then(() => {
+        nodes_dataset = new vis.DataSet(nodes);
+        edges_dataset = new vis.DataSet(edges);
+
         var container = document.getElementById("mynetwork");
-        var data = {
-          nodes: new vis.DataSet(nodes),
-          edges: new vis.DataSet(edges),
+        data = {
+          nodes: nodes_dataset,
+          edges: edges_dataset,
         };
-        var description_container = document.getElementById("description");
+        description_container = document.getElementById("description");
         var options = {};
-        var network = new vis.Network(container, data, options);
+        network = new vis.Network(container, data, options);
 
         network.on("click", function(clickProperties) {
             if(clickProperties.nodes.length == 1) {
                 var id = ids.indexOf(clickProperties.nodes[0]);
 
                 description_container.style.display = "block";
-                description_container.textContent = nodes[id].label;
+                current_description = raw_data[id].description
+                if(mode == "english") {
+                    description_container.textContent = current_description.english;
+                } else {
+                    description_container.textContent = current_description.french;
+                }
             } else if(clickProperties.nodes.length == 0) {
                 description_container.style.display = 'none';
+                current_description = null;
             }
         });
     });
+
+    function toFrench() {
+        mode = "french";
+        document.getElementById("french_button").textContent = "Français";
+        document.getElementById("english_button").textContent = "Anglais";
+        if(current_description != null) {
+            description_container.textContent = current_description.french;
+        }
+
+        nodes_dataset.forEach(frenchForEach);
+
+        function frenchForEach(item) {
+            var id = ids.indexOf(item.id);
+            data.nodes.update({"id":raw_data[id].id, "label":raw_data[id].label.french});
+        }
+    }
+
+    function toEnglish() {
+        mode = "english";
+        document.getElementById("french_button").textContent = "French";
+        document.getElementById("english_button").textContent = "English";
+        if(current_description != null) {
+            description_container.textContent = current_description.english;
+        }
+
+        nodes_dataset.forEach(englishForEach);
+
+        function englishForEach(item) {
+            var id = ids.indexOf(item.id);
+            data.nodes.update({"id":raw_data[id].id, "label":raw_data[id].label.english});
+        }
+    }
 </script>
 </body>
 </html>

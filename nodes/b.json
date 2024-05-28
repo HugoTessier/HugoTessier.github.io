@@ -1,7 +1,13 @@
 {
   "id": "B",
-  "label": "Node B",
-  "description": "I am B",
+  "label": {
+    "english": "Node B",
+    "french": "Nœud B"
+  },
+  "description": {
+    "english": "I am B.",
+    "french": "Je suis B."
+  },
   "edge_to": [
     "B"
   ]
