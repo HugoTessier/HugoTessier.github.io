@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <title>Network</title>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <script
             type="text/javascript"
             src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
     ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style type="text/css">
         #mynetwork {
           width: 600px;
@@ -20,50 +18,59 @@
 <div id="mynetwork"></div>
 <div id="description"></div>
 <script type="text/javascript">
-console.log("aaa");
-    $.getJSON('./nodes', data => {
-        console.log(data);
+
+
+    var nodes = [];
+    var edges = [];
+    var ids = [];
+
+    fetch('all_nodes.json')
+    .then(response => response.json())
+    .then(data => {
+        const filesList = data.files;
+        const fetchPromises = filesList.map(fileName => {
+            return fetch(fileName)
+            .then(response => response.json())
+            .then(fileData => {
+                if (!Array.isArray(nodes)) {
+                    nodes = [];
+                }
+                if (!Array.isArray(edges)) {
+                    edges = [];
+                }
+                if (!Array.isArray(ids)) {
+                    ids = [];
+                }
+                nodes.push({id: fileData.id, label: fileData.label});
+                ids.push(fileData.id);
+                for (let edge_data of fileData.edge_to) {
+                    edges.push({from: fileData.id, to: edge_data});
+                }
+            });
+        });
+        return Promise.all(fetchPromises);
+    })
+    .then(() => {
+        var container = document.getElementById("mynetwork");
+        var data = {
+          nodes: new vis.DataSet(nodes),
+          edges: new vis.DataSet(edges),
+        };
+        var description_container = document.getElementById("description");
+        var options = {};
+        var network = new vis.Network(container, data, options);
+
+        network.on("click", function(clickProperties) {
+            if(clickProperties.nodes.length == 1) {
+                var id = ids.indexOf(clickProperties.nodes[0]);
+
+                description_container.style.display = "block";
+                description_container.textContent = nodes[id].label;
+            } else if(clickProperties.nodes.length == 0) {
+                description_container.style.display = 'none';
+            }
+        });
     });
-
-    // create an array with nodes
-    var nodes = new vis.DataSet([
-      { id: 1, label: "Node 1" },
-      { id: 2, label: "Node 2" },
-      { id: 3, label: "Node 3" },
-      { id: 4, label: "Node 4" },
-      { id: 5, label: "Node 5" },
-    ]);
-
-    // create an array with edges
-    var edges = new vis.DataSet([
-      { from: 1, to: 3 },
-      { from: 1, to: 2 },
-      { from: 2, to: 4 },
-      { from: 2, to: 5 },
-      { from: 3, to: 3 },
-    ]);
-
-    // create a network
-    var container = document.getElementById("mynetwork");
-    var data = {
-      nodes: nodes,
-      edges: edges,
-    };
-    var description_container = document.getElementById("description");
-    var options = {};
-    var network = new vis.Network(container, data, options);
-
-    network.on("click", function(clickProperties) {
-                            if(clickProperties.nodes.length == 1) {
-                                var id = clickProperties.nodes[0];
-
-                                description_container.style.display = "block";
-                                description_container.textContent = nodes[id - 1].label;
-                            } else if(clickProperties.nodes.length == 0) {
-                                description_container.style.display = 'none';
-                            }
-                        }
-    )
 </script>
 </body>
 </html>
