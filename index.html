@@ -126,8 +126,7 @@
             current_description = raw_data[current_id].links;
 
             let ul = `<ul style="list-style-type:none;padding:0;margin:0">${current_description.map(data =>
-            `<li>${data}</li>`).join('')}
-                  </ul>`;
+            `<li><a href="${data}" target="_blank" rel="noopener noreferrer">${data}</a></li>`).join('')}</ul>`;
             document.getElementById("description_content").innerHTML = ul;
         }
     }
