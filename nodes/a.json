@@ -4,9 +4,21 @@
     "english": "Node A",
     "french": "Nœud A"
   },
-  "description": {
-    "english": "I am A.",
-    "french": "Je suis A."
+  "links": [
+    "https://example.fr",
+    "https://example2.ca"
+  ],
+  "vulgarized": {
+    "english": "I am A vulgarized.",
+    "french": "Je suis A vulgarisé."
+  },
+  "definition": {
+    "english": "I am the definition of A.",
+    "french": "Je suis la définition de A."
+  },
+  "details": {
+    "english": "I am A detailed.",
+    "french": "Je suis A détaillé."
   },
   "edge_to": [
     "B"
