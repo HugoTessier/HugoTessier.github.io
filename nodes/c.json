@@ -1,0 +1,14 @@
+{
+  "id": "C",
+  "field": "algebra",
+  "label": {
+    "english": "Node C",
+    "french": "Nœud C"
+  },
+  "vulgarized": {
+    "english": "I am C.",
+    "french": "Je suis C."
+  },
+  "edge_to": [
+  ]
+}

@@ -1,5 +1,6 @@
 {
   "id": "B",
+  "field": "analysis",
   "label": {
     "english": "Node B",
     "french": "Nœud B"

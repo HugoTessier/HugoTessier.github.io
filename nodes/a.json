@@ -1,5 +1,6 @@
 {
   "id": "A",
+  "field": "statistics",
   "label": {
     "english": "Node A",
     "french": "Nœud A"
