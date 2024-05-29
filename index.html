@@ -219,7 +219,8 @@
         document.getElementById("definition_button").textContent = "Définition";
         document.getElementById("details_button").textContent = "Détails";
         document.getElementById("links_button").textContent = "Liens";
-        document.getElementById("linked_nodes_button").textContent = "Lié à...";
+        document.getElementById("linked_nodes_button").textContent = "Dépend de...";
+        document.getElementById("reference_nodes_button").textContent = "Référencé par...";
 
         if(current_description != null && typeof current_description != 'string'  && typeof current_description != 'array') {
             document.getElementById("description_content").textContent = current_description.french;
@@ -249,7 +250,8 @@
         document.getElementById("definition_button").textContent = "Definition";
         document.getElementById("details_button").textContent = "Details";
         document.getElementById("links_button").textContent = "Links";
-        document.getElementById("linked_nodes_button").textContent = "Connected to...";
+        document.getElementById("linked_nodes_button").textContent = "Related to...";
+        document.getElementById("reference_nodes_button").textContent = "Referenced by...";
 
         if(current_description != null && typeof current_description != 'string' && typeof current_description != 'array') {
             document.getElementById("description_content").textContent = current_description.english;
