@@ -44,6 +44,14 @@
     var network = null;
     var network_data = null;
 
+    function updateButtonsStyle(name) {
+        document.getElementById("vulgarized_button").style.borderStyle = name == "vulgarized_button" ? "inset" : "outset";
+        document.getElementById("definition_button").style.borderStyle = name == "definition_button" ? "inset" : "outset";
+        document.getElementById("details_button").style.borderStyle = name == "details_button" ? "inset" : "outset";
+        document.getElementById("links_button").style.borderStyle = name == "links_button" ? "inset" : "outset";
+        document.getElementById("linked_nodes_button").style.borderStyle = name == "linked_nodes_button" ? "inset" : "outset";
+    }
+
     function setDescription(id) {
         var current_data = raw_data[id]
         var description_container = document.getElementById("description");
@@ -52,11 +60,7 @@
         current_description = raw_data[id].vulgarized;
         current_id = id;
 
-        document.getElementById("vulgarized_button").style.borderStyle = "outset";
-        document.getElementById("definition_button").style.borderStyle = "outset";
-        document.getElementById("details_button").style.borderStyle = "outset";
-        document.getElementById("links_button").style.borderStyle = "outset";
-        document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+        updateButtonsStyle("none")
 
         if("vulgarized" in current_data) {
             document.getElementById("vulgarized_button").style.display = "inline-block";
@@ -97,11 +101,7 @@
 
     function showVulgarized() {
         if (current_description != null) {
-            document.getElementById("vulgarized_button").style.borderStyle = "inset";
-            document.getElementById("definition_button").style.borderStyle = "outset";
-            document.getElementById("details_button").style.borderStyle = "outset";
-            document.getElementById("links_button").style.borderStyle = "outset";
-            document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+            updateButtonsStyle("vulgarized_button")
 
             current_description = raw_data[current_id].vulgarized;
             if(mode == "english") {
@@ -114,11 +114,7 @@
 
     function showDefinition() {
         if (current_description != null) {
-            document.getElementById("vulgarized_button").style.borderStyle = "outset";
-            document.getElementById("definition_button").style.borderStyle = "inset";
-            document.getElementById("details_button").style.borderStyle = "outset";
-            document.getElementById("links_button").style.borderStyle = "outset";
-            document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+            updateButtonsStyle("definition_button")
 
             current_description = raw_data[current_id].definition;
             if(mode == "english") {
@@ -131,11 +127,7 @@
 
     function showDetails() {
         if (current_description != null) {
-            document.getElementById("vulgarized_button").style.borderStyle = "outset";
-            document.getElementById("definition_button").style.borderStyle = "outset";
-            document.getElementById("details_button").style.borderStyle = "inset";
-            document.getElementById("links_button").style.borderStyle = "outset";
-            document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+            updateButtonsStyle("details_button")
 
             current_description = raw_data[current_id].details;
             if(mode == "english") {
@@ -148,11 +140,7 @@
 
     function showLinks() {
         if (current_description != null) {
-            document.getElementById("vulgarized_button").style.borderStyle = "outset";
-            document.getElementById("definition_button").style.borderStyle = "outset";
-            document.getElementById("details_button").style.borderStyle = "outset";
-            document.getElementById("links_button").style.borderStyle = "inset";
-            document.getElementById("linked_nodes_button").style.borderStyle = "outset";
+            updateButtonsStyle("links_button")
 
             current_description = raw_data[current_id].links;
 
@@ -163,12 +151,31 @@
     }
 
     function showLinkedNodes() {
-        document.getElementById("vulgarized_button").style.borderStyle = "outset";
-        document.getElementById("definition_button").style.borderStyle = "outset";
-        document.getElementById("details_button").style.borderStyle = "outset";
-        document.getElementById("links_button").style.borderStyle = "outset";
-        document.getElementById("linked_nodes_button").style.borderStyle = "inset";
-        document.getElementById("description_content").textContent = "WIP";
+        updateButtonsStyle("linked_nodes_button")
+
+        let ul = `<ul style="list-style-type:none;padding:0;margin:0">`;
+        raw_data[current_id].edge_to.forEach(edgeToForEach);
+
+        function edgeToForEach(edgeto) {
+            let node_name = null;
+            if(mode=='english') {
+                node_name = raw_data[ids.indexOf(edgeto)].label.english;
+            } else {
+                node_name = raw_data[ids.indexOf(edgeto)].label.french;
+            }
+            ul += `<li><span class="edge-item" id="span_${edgeto}" style="color: blue; cursor: pointer">${node_name}</span></li>`
+        }
+
+        ul += `</ul>`;
+        document.getElementById("description_content").innerHTML = ul;
+
+        document.querySelectorAll('.edge-item').forEach(item => {
+            item.addEventListener('click', function(event) {
+                network.selectNodes([item.id.replace('span_', '')], [false]);
+                setDescription(ids.indexOf(item.id.replace('span_', '')));
+            });
+        });
+        current_description = 'linked_nodes';
     }
 
 
@@ -186,8 +193,12 @@
         document.getElementById("links_button").textContent = "Liens";
         document.getElementById("linked_nodes_button").textContent = "Lié à...";
 
-        if(current_description != null && 'french' in current_description && typeof current_description != 'string') {
+        if(current_description != null && typeof current_description != 'string') {
             document.getElementById("description_content").textContent = current_description.french;
+        } else if(current_description == 'linked_nodes') {
+            document.querySelectorAll('.edge-item').forEach(item => {
+                item.textContent = raw_data[ids.indexOf(item.id.replace('span_', ''))].label.french;
+            });
         }
 
         nodes_dataset.forEach(frenchForEach);
@@ -212,8 +223,12 @@
         document.getElementById("links_button").textContent = "Links";
         document.getElementById("linked_nodes_button").textContent = "Connected to...";
 
-        if(current_description != null && 'english' in current_description  && typeof current_description != 'string') {
+        if(current_description != null && typeof current_description != 'string') {
             document.getElementById("description_content").textContent = current_description.english;
+        } else if(current_description == 'linked_nodes') {
+            document.querySelectorAll('.edge-item').forEach(item => {
+                item.textContent = raw_data[ids.indexOf(item.id.replace('span_', ''))].label.english;
+            });
         }
 
         nodes_dataset.forEach(englishForEach);
