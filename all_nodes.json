@@ -1,6 +1,7 @@
 {
   "files": [
     "nodes/a.json",
-    "nodes/b.json"
+    "nodes/b.json",
+    "nodes/c.json"
   ]
 }

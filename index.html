@@ -45,6 +45,33 @@
     var network = null;
     var network_data = null;
 
+    function getDependencies(data_element) {
+        let reviewed_nodes = {};
+        function parseElement(element) {
+            if (element.id in reviewed_nodes) {
+                return reviewed_nodes[element.id];
+            }
+            reviewed_nodes[element.id] = [element.id];
+
+            if (element.referenced_by.length != 0) {
+                element.referenced_by.forEach((id) => {
+                    index = ids.indexOf(id);
+                    if (index != -1) {
+                        let parsed = parseElement(raw_data[index]);
+                        parsed.forEach((p) => {
+                            if (!reviewed_nodes[element.id].includes(p)) {
+                                reviewed_nodes[element.id].push(p);
+                            }
+                        });
+                    }
+                });
+            }
+            return reviewed_nodes[element.id];
+        }
+
+        return parseElement(data_element).length;
+    }
+
     function updateButtonsStyle(name) {
         document.getElementById("vulgarized_button").style.borderStyle = name == "vulgarized_button" ? "inset" : "outset";
         document.getElementById("definition_button").style.borderStyle = name == "definition_button" ? "inset" : "outset";
@@ -313,14 +340,24 @@
         return Promise.all(fetchPromises);
     })
     .then(() => {
-        for (let data_entry of raw_data) {
-            for (let edge_to of data_entry.edge_to) {
+        raw_data.forEach( (data_entry) => {
+            data_entry.edge_to.forEach( (edge_to) => {
                 let index = ids.indexOf(edge_to);
                 if (index != -1) {
                     raw_data[index].referenced_by.push(data_entry.id);
                 }
-            }
-        }
+            });
+        });
+        raw_data.forEach( (data_entry) => {
+            data_entry.complexity_level = getDependencies(data_entry);
+        });
+
+        nodes.forEach((node) => {
+            let data_entry = raw_data[ids.indexOf(node.id)];
+            node.font = {'size' : 14 * (Math.log10(data_entry.complexity_level)+1)};
+            console.log(node.font);
+        });
+
 
         nodes_dataset = new vis.DataSet(nodes);
         edges_dataset = new vis.DataSet(edges);
