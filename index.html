@@ -100,54 +100,46 @@
     }
 
     function showVulgarized() {
-        if (current_description != null) {
-            updateButtonsStyle("vulgarized_button")
+        updateButtonsStyle("vulgarized_button")
 
-            current_description = raw_data[current_id].vulgarized;
-            if(mode == "english") {
-                document.getElementById("description_content").textContent = current_description.english;
-            } else {
-                document.getElementById("description_content").textContent = current_description.french;
-            }
+        current_description = raw_data[current_id].vulgarized;
+        if(mode == "english") {
+            document.getElementById("description_content").textContent = current_description.english;
+        } else {
+            document.getElementById("description_content").textContent = current_description.french;
         }
     }
 
     function showDefinition() {
-        if (current_description != null) {
-            updateButtonsStyle("definition_button")
+        updateButtonsStyle("definition_button")
 
-            current_description = raw_data[current_id].definition;
-            if(mode == "english") {
-                document.getElementById("description_content").textContent = current_description.english;
-            } else {
-                document.getElementById("description_content").textContent = current_description.french;
-            }
+        current_description = raw_data[current_id].definition;
+        if(mode == "english") {
+            document.getElementById("description_content").textContent = current_description.english;
+        } else {
+            document.getElementById("description_content").textContent = current_description.french;
         }
     }
 
     function showDetails() {
-        if (current_description != null) {
-            updateButtonsStyle("details_button")
+        updateButtonsStyle("details_button")
 
-            current_description = raw_data[current_id].details;
-            if(mode == "english") {
-                document.getElementById("description_content").textContent = current_description.english;
-            } else {
-                document.getElementById("description_content").textContent = current_description.french;
-            }
+        current_description = raw_data[current_id].details;
+        if(mode == "english") {
+            document.getElementById("description_content").textContent = current_description.english;
+        } else {
+            document.getElementById("description_content").textContent = current_description.french;
         }
     }
 
     function showLinks() {
-        if (current_description != null) {
-            updateButtonsStyle("links_button")
+        updateButtonsStyle("links_button")
 
-            current_description = raw_data[current_id].links;
+        current_description = null;
 
-            let ul = `<ul style="list-style-type:none;padding:0;margin:0">${current_description.map(data =>
-            `<li><a href="${data}" target="_blank" rel="noopener noreferrer">${data}</a></li>`).join('')}</ul>`;
-            document.getElementById("description_content").innerHTML = ul;
-        }
+        let ul = `<ul style="list-style-type:none;padding:0;margin:0">${raw_data[current_id].links.map(data =>
+        `<li><a href="${data}" target="_blank" rel="noopener noreferrer">${data}</a></li>`).join('')}</ul>`;
+        document.getElementById("description_content").innerHTML = ul;
     }
 
     function showLinkedNodes() {
@@ -193,7 +185,7 @@
         document.getElementById("links_button").textContent = "Liens";
         document.getElementById("linked_nodes_button").textContent = "Lié à...";
 
-        if(current_description != null && typeof current_description != 'string') {
+        if(current_description != null && typeof current_description != 'string'  && typeof current_description != 'array') {
             document.getElementById("description_content").textContent = current_description.french;
         } else if(current_description == 'linked_nodes') {
             document.querySelectorAll('.edge-item').forEach(item => {
@@ -223,7 +215,7 @@
         document.getElementById("links_button").textContent = "Links";
         document.getElementById("linked_nodes_button").textContent = "Connected to...";
 
-        if(current_description != null && typeof current_description != 'string') {
+        if(current_description != null && typeof current_description != 'string' && typeof current_description != 'array') {
             document.getElementById("description_content").textContent = current_description.english;
         } else if(current_description == 'linked_nodes') {
             document.querySelectorAll('.edge-item').forEach(item => {
