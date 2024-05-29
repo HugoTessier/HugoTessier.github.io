@@ -157,13 +157,15 @@
         raw_data[current_id].edge_to.forEach(edgeToForEach);
 
         function edgeToForEach(edgeto) {
-            let node_name = null;
-            if(mode=='english') {
-                node_name = raw_data[ids.indexOf(edgeto)].label.english;
-            } else {
-                node_name = raw_data[ids.indexOf(edgeto)].label.french;
+            if (ids.indexOf(edgeto) != -1) {
+                let node_name = null;
+                if(mode=='english') {
+                    node_name = raw_data[ids.indexOf(edgeto)].label.english;
+                } else {
+                    node_name = raw_data[ids.indexOf(edgeto)].label.french;
+                }
+                ul += `<li><span class="edge-item" id="span_${edgeto}" style="color: blue; cursor: pointer">${node_name}</span></li>`
             }
-            ul += `<li><span class="edge-item" id="span_${edgeto}" style="color: blue; cursor: pointer">${node_name}</span></li>`
         }
 
         ul += `</ul>`;
@@ -185,13 +187,15 @@
         raw_data[current_id].referenced_by.forEach(referencedByForEach);
 
         function referencedByForEach(refby) {
-            let node_name = null;
-            if(mode=='english') {
-                node_name = raw_data[ids.indexOf(refby)].label.english;
-            } else {
-                node_name = raw_data[ids.indexOf(refby)].label.french;
+            if (ids.indexOf(refby) != -1) {
+                let node_name = null;
+                if(mode=='english') {
+                    node_name = raw_data[ids.indexOf(refby)].label.english;
+                } else {
+                    node_name = raw_data[ids.indexOf(refby)].label.french;
+                }
+                ul += `<li><span class="edge-item" id="span_${refby}" style="color: blue; cursor: pointer">${node_name}</span></li>`
             }
-            ul += `<li><span class="edge-item" id="span_${refby}" style="color: blue; cursor: pointer">${node_name}</span></li>`
         }
 
         ul += `</ul>`;
@@ -312,7 +316,9 @@
         for (let data_entry of raw_data) {
             for (let edge_to of data_entry.edge_to) {
                 let index = ids.indexOf(edge_to);
-                raw_data[index].referenced_by.push(data_entry.id);
+                if (index != -1) {
+                    raw_data[index].referenced_by.push(data_entry.id);
+                }
             }
         }
 
