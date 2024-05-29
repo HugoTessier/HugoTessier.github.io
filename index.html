@@ -26,7 +26,8 @@
         <button id="definition_button" onclick="showDefinition()">Definition</button>
         <button id="details_button" onclick="showDetails()">Details</button>
         <button id="links_button" onclick="showLinks()">Links</button>
-        <button id="linked_nodes_button" onclick="showLinkedNodes()">Connected to...</button>
+        <button id="linked_nodes_button" onclick="showLinkedNodes()">Related to...</button>
+        <button id="reference_nodes_button" onclick="showReferenceNodes()">Referenced by...</button>
     </div>
     <div id="description_content" style="display:block"></div>
 </div>
@@ -50,6 +51,7 @@
         document.getElementById("details_button").style.borderStyle = name == "details_button" ? "inset" : "outset";
         document.getElementById("links_button").style.borderStyle = name == "links_button" ? "inset" : "outset";
         document.getElementById("linked_nodes_button").style.borderStyle = name == "linked_nodes_button" ? "inset" : "outset";
+        document.getElementById("reference_nodes_button").style.borderStyle = name == "reference_nodes_button" ? "inset" : "outset";
     }
 
     function setDescription(id) {
@@ -96,6 +98,12 @@
             document.getElementById("linked_nodes_button").style.display = "inline-block";
         } else {
             document.getElementById("linked_nodes_button").style.display = "none";
+        }
+
+        if(current_data.referenced_by.length != 0) {
+            document.getElementById("reference_nodes_button").style.display = "inline-block";
+        } else {
+            document.getElementById("reference_nodes_button").style.display = "none";
         }
     }
 
@@ -156,6 +164,34 @@
                 node_name = raw_data[ids.indexOf(edgeto)].label.french;
             }
             ul += `<li><span class="edge-item" id="span_${edgeto}" style="color: blue; cursor: pointer">${node_name}</span></li>`
+        }
+
+        ul += `</ul>`;
+        document.getElementById("description_content").innerHTML = ul;
+
+        document.querySelectorAll('.edge-item').forEach(item => {
+            item.addEventListener('click', function(event) {
+                network.selectNodes([item.id.replace('span_', '')], [false]);
+                setDescription(ids.indexOf(item.id.replace('span_', '')));
+            });
+        });
+        current_description = 'linked_nodes';
+    }
+
+    function showReferenceNodes() {
+        updateButtonsStyle("reference_nodes_button")
+
+        let ul = `<ul style="list-style-type:none;padding:0;margin:0">`;
+        raw_data[current_id].referenced_by.forEach(referencedByForEach);
+
+        function referencedByForEach(refby) {
+            let node_name = null;
+            if(mode=='english') {
+                node_name = raw_data[ids.indexOf(refby)].label.english;
+            } else {
+                node_name = raw_data[ids.indexOf(refby)].label.french;
+            }
+            ul += `<li><span class="edge-item" id="span_${refby}" style="color: blue; cursor: pointer">${node_name}</span></li>`
         }
 
         ul += `</ul>`;
@@ -251,6 +287,7 @@
                 if (!Array.isArray(ids)) {
                     ids = [];
                 }
+                fileData.referenced_by = [];
                 raw_data.push(fileData);
                 nodes.push({id: fileData.id, label: fileData.label.english});
                 ids.push(fileData.id);
@@ -270,6 +307,13 @@
         return Promise.all(fetchPromises);
     })
     .then(() => {
+        for (let data_entry of raw_data) {
+            for (let edge_to of data_entry.edge_to) {
+                let index = ids.indexOf(edge_to);
+                raw_data[index].referenced_by.push(data_entry.id);
+            }
+        }
+
         nodes_dataset = new vis.DataSet(nodes);
         edges_dataset = new vis.DataSet(edges);
 
