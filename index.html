@@ -6,6 +6,7 @@
             type="text/javascript"
             src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
     ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style type="text/css">
         #mynetwork {
           width: 600px;
@@ -107,6 +108,7 @@
             } else {
                 document.getElementById("description_content").textContent = current_description.french;
             }
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
         } else {
             document.getElementById("vulgarized_button").style.display = "none";
         }
@@ -151,6 +153,7 @@
         } else {
             document.getElementById("description_content").textContent = current_description.french;
         }
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
 
     function showDefinition() {
@@ -162,6 +165,7 @@
         } else {
             document.getElementById("description_content").textContent = current_description.french;
         }
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
 
     function showDetails() {
@@ -173,6 +177,7 @@
         } else {
             document.getElementById("description_content").textContent = current_description.french;
         }
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
 
     function showLinks() {
@@ -275,6 +280,7 @@
             var id = ids.indexOf(item.id);
             network_data.nodes.update({"id":raw_data[id].id, "label":raw_data[id].label.french});
         }
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
 
     function toEnglish() {
@@ -306,6 +312,7 @@
             var id = ids.indexOf(item.id);
             network_data.nodes.update({"id":raw_data[id].id, "label":raw_data[id].label.english});
         }
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
 
     fetch('all_nodes.json')

@@ -10,7 +10,7 @@
     "https://example2.ca"
   ],
   "vulgarized": {
-    "english": "I am A vulgarized.",
+    "english": "I am A vulgarized. $$\\sum_{n=0}^N a^n$$",
     "french": "Je suis A vulgarisé."
   },
   "definition": {
