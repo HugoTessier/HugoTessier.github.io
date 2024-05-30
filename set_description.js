@@ -7,17 +7,17 @@ function setDescription(id) {
     current_description = raw_data[id].vulgarized;
     current_id = id;
 
-    updateButtonsStyle("none")
+    updateButtonsStyle("none");
 
     if("vulgarized" in current_data) {
+        updateButtonsStyle("vulgarized_button");
         document.getElementById("vulgarized_button").style.display = "inline-block";
-        document.getElementById("vulgarized_button").style.borderStyle = "inset";
         if(mode == "english") {
             document.getElementById("description_content").textContent = current_description.english;
         } else {
             document.getElementById("description_content").textContent = current_description.french;
         }
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+
     } else {
         document.getElementById("vulgarized_button").style.display = "none";
     }
@@ -51,4 +51,6 @@ function setDescription(id) {
     } else {
         document.getElementById("reference_nodes_button").style.display = "none";
     }
+
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 }

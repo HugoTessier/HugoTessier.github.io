@@ -59,7 +59,7 @@ function showLinkedNodes() {
             } else {
                 node_name = raw_data[ids.indexOf(edgeto)].label.french;
             }
-            ul += `<li><span class="edge-item" id="span_${edgeto}" style="color: blue; cursor: pointer">${node_name}</span></li>`
+            ul += `<li><span class="edge-item" id="span_${edgeto}" style="color: DodgerBlue; cursor: pointer">${node_name}</span></li>`
         }
     }
 
@@ -89,7 +89,7 @@ function showReferenceNodes() {
             } else {
                 node_name = raw_data[ids.indexOf(refby)].label.french;
             }
-            ul += `<li><span class="edge-item" id="span_${refby}" style="color: blue; cursor: pointer">${node_name}</span></li>`
+            ul += `<li><span class="edge-item" id="span_${refby}" style="color: DodgerBlue; cursor: pointer">${node_name}</span></li>`
         }
     }
 

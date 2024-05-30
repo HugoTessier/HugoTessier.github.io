@@ -1,0 +1,15 @@
+{
+  "id": "E",
+  "field": "default",
+  "label": {
+    "english": "Node E",
+    "french": "Nœud E"
+  },
+  "vulgarized": {
+    "english": "I am E.",
+    "french": "Je suis E."
+  },
+  "edge_to": [
+    "A"
+  ]
+}

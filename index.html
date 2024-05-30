@@ -25,46 +25,59 @@
     <script src="misc.js"></script>
 </head>
 <body>
-<div id="buttons">
-    <button id="french_button" onclick="toFrench()">French</button>
-    <button id="english_button" onclick="toEnglish()" style='border-style:inset'>English</button>
-</div>
-<form autocomplete="off" action="javascript:void(0);" id="myForm">
-    <div class="autocomplete" style="width:300px;">
-        <input id="formInput" type="text" name="myCountry" placeholder="Search for a notion...">
+<div class="container">
+    <div class="container row">
+        <div class="col">
+            <form autocomplete="off" action="javascript:void(0);" id="myForm">
+                <div class="autocomplete">
+                    <input id="formInput" type="text" name="myCountry" placeholder="Search for a notion...">
+                </div>
+                <input id='formSubmit' type="submit" value="Submit" onclick="formSelectAction()">
+            </form>
+        </div>
+        <button class="btn btn-secondary btn-lg" id="french_button" onclick="toFrench()" style="width:20vh;">French</button>
+        <button class="btn btn-secondary btn-lg" id="english_button" onclick="toEnglish()" style="width:20vh;">English</button>
+
     </div>
-    <input id='formSubmit' type="submit" value="Submit" onclick="formSelectAction()">
-</form>
-<div id="mynetwork"></div>
-<div id="description" style="display:none">
-    <div id="description_buttons">
-        <button id="vulgarized_button" onclick="showVulgarized()">Vulgarized</button>
-        <button id="definition_button" onclick="showDefinition()">Definition</button>
-        <button id="details_button" onclick="showDetails()">Details</button>
-        <button id="links_button" onclick="showLinks()">Links</button>
-        <button id="linked_nodes_button" onclick="showLinkedNodes()">Related to...</button>
-        <button id="reference_nodes_button" onclick="showReferenceNodes()">Referenced by...</button>
+    <div id="mynetwork" class="container min-vh-50 vh-50"></div>
+    <div id="description" style="display:none">
+        <div id="description_buttons" class="row justify-content-md-center">
+            <button class="col btn btn-primary btn-lg" id="vulgarized_button" onclick="showVulgarized()">Vulgarized</button>
+            <button class="col btn btn-primary btn-lg" id="definition_button" onclick="showDefinition()">Definition</button>
+            <button class="col btn btn-primary btn-lg" id="details_button" onclick="showDetails()">Details</button>
+            <button class="col btn btn-primary btn-lg" id="links_button" onclick="showLinks()">Links</button>
+            <button class="col btn btn-primary btn-lg" id="linked_nodes_button" onclick="showLinkedNodes()">Related to...</button>
+            <button class="col btn btn-primary btn-lg" id="reference_nodes_button" onclick="showReferenceNodes()">Referenced by...</button>
+        </div>
+        <div id="description_content" style="display:block" class="container"></div>
     </div>
-    <div id="description_content" style="display:block"></div>
 </div>
 <script type="text/javascript">
 
-    colors = {
-        'topology': {'background': '#f1f148', "border": "#a7a732", "highlight": {'background': '#ffff00', "border": "#6b6b00"}},
-        'statistics': {'background': '#76caff', "border": "#295f82", "highlight": {'background': '#31afff', "border": "#005389"}},
-        'algebra': {'background': '#ffb22e', "border": "#a3721e", "highlight": {'background': '#ffa100', "border": "#945e00"}},
-        'analysis': {'background': '#70ef5e', "border": "#3f8436", "highlight": {'background': '#1dff00', "border": "#0f8400"}},
-        'default': {'background': '#bebebe', "border": "#717171", "highlight": {'background': '#dadada', "border": "#404040"}}
-    };
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        colors = {
+            'topology': {'background': '#abab31', "border": "#f8f812", "highlight": {'background': '#cdcd00', "border": "#f8f812"}},
+            'statistics': {'background': '#499cd1', "border": "#14a3ff", "highlight": {'background': '#007dcd', "border": "#14a3ff"}},
+            'algebra': {'background': '#a56419', "border": "#ff8f0f", "highlight": {'background': '#e67a00', "border": "#ff8f0f"}},
+            'analysis': {'background': '#2f8e21', "border": "#47ff2b", "highlight": {'background': '#1bcc00', "border": "#47ff2b"}},
+            'default': {'background': '#5d5d5d', "border": "#b9b9b9", "highlight": {'background': '#949494', "border": "#b9b9b9"}}
+        };
+    } else {
+        colors = {
+            'topology': {'background': '#f1f148', "border": "#c3cc00", "highlight": {'background': '#ffff00', "border": "#c3cc00"}},
+            'statistics': {'background': '#76caff', "border": "#295f82", "highlight": {'background': '#31afff', "border": "#005389"}},
+            'algebra': {'background': '#ffb22e', "border": "#bc7700", "highlight": {'background': '#ffa100', "border": "#bc7700"}},
+            'analysis': {'background': '#70ef5e', "border": "#3f8436", "highlight": {'background': '#1dff00', "border": "#3f8436"}},
+            'default': {'background': '#bebebe', "border": "#717171", "highlight": {'background': '#dadada', "border": "#404040"}}
+        };
+    }
 
     const userLang = navigator.language || navigator.userLanguage;
-    console.log(userLang);
     if (userLang == 'fr' || userLang == 'french') {
         var mode = 'french';
     } else {
         var mode = 'english';
     }
-    console.log(mode);
     var raw_data = [];
     var nodes = [];
     var edges = [];

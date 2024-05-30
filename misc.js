@@ -27,12 +27,14 @@ function getDependencies(data_element) {
 }
 
 function updateButtonsStyle(name) {
-    document.getElementById("vulgarized_button").style.borderStyle = name == "vulgarized_button" ? "inset" : "outset";
-    document.getElementById("definition_button").style.borderStyle = name == "definition_button" ? "inset" : "outset";
-    document.getElementById("details_button").style.borderStyle = name == "details_button" ? "inset" : "outset";
-    document.getElementById("links_button").style.borderStyle = name == "links_button" ? "inset" : "outset";
-    document.getElementById("linked_nodes_button").style.borderStyle = name == "linked_nodes_button" ? "inset" : "outset";
-    document.getElementById("reference_nodes_button").style.borderStyle = name == "reference_nodes_button" ? "inset" : "outset";
+    const button_ids = ['vulgarized_button', "definition_button", "details_button", "links_button", "linked_nodes_button", "reference_nodes_button"]
+    button_ids.forEach((id) => {
+        if (name == id) {
+            document.getElementById(id).classList.add('active');
+        } else {
+            document.getElementById(id).classList.remove('active');
+        }
+    });
 }
 
 

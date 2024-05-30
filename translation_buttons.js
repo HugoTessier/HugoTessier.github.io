@@ -2,8 +2,8 @@
 
 function toFrench() {
     mode = "french";
-    document.getElementById("english_button").style.borderStyle = "outset";
-    document.getElementById("french_button").style.borderStyle = "inset";
+    document.getElementById("english_button").classList.remove('active');
+    document.getElementById("french_button").classList.add('active');
 
     document.getElementById("french_button").textContent = "Français";
     document.getElementById("english_button").textContent = "Anglais";
@@ -37,8 +37,8 @@ function toFrench() {
 
 function toEnglish() {
     mode = "english";
-    document.getElementById("english_button").style.borderStyle = "inset";
-    document.getElementById("french_button").style.borderStyle = "outset";
+    document.getElementById("english_button").classList.add('active');
+    document.getElementById("french_button").classList.remove('active');
 
     document.getElementById("french_button").textContent = "French";
     document.getElementById("english_button").textContent = "English";

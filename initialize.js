@@ -64,6 +64,11 @@ function initialize_network() {
             } else {
                 node.color = colors['default'];
             }
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                node.font['color'] = 'white';
+            } else {
+                node.font['color'] = 'black';
+            }
         });
 
 
