@@ -87,6 +87,7 @@ function autocomplete() {
             if (currentFocus > -1) {
               if (x) x[currentFocus].click();
             }
+            document.getElementById('formSubmit').click();
         }
     });
 
@@ -113,14 +114,14 @@ function autocomplete() {
         }
     }
 
-    function simplifyFrench(frenchStr) {
-        return frenchStr.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace('œ', 'oe')
-    }
-
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
     });
 }
+
+function simplifyFrench(frenchStr) {
+        return frenchStr.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace('œ', 'oe')
+    }
 
 function formSelectAction() {
     const input_label = document.getElementById('formInput').value;
@@ -132,7 +133,7 @@ function formSelectAction() {
         } else {
             label = raw_data[i].label.english;
         }
-        if (label == input_label) {
+        if (simplifyFrench(label).toUpperCase() == simplifyFrench(input_label).toUpperCase()) {
             id = raw_data[i].id;
             break;
         }
