@@ -108,11 +108,18 @@
         'default': {'background': '#bebebe', "border": "#717171", "highlight": {'background': '#dadada', "border": "#404040"}}
     };
 
+    const userLang = navigator.language || navigator.userLanguage;
+    console.log(userLang);
+    if (userLang == 'fr' || userLang == 'french') {
+        var mode = 'french';
+    } else {
+        var mode = 'english';
+    }
+    console.log(mode);
     var raw_data = [];
     var nodes = [];
     var edges = [];
     var ids = [];
-    var mode = "english";
     var current_description = null;
     var current_id = null;
     var nodes_dataset = null;

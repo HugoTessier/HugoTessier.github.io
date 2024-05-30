@@ -89,5 +89,11 @@ function initialize_network() {
                 current_description = null;
             }
         });
+
+        if (mode == 'french') {
+            toFrench();
+        } else {
+            toEnglish();
+        }
     });
 }
