@@ -146,3 +146,27 @@ function formSelectAction() {
     }
     document.getElementById('myForm').reset();
 }
+
+function darkModeEvent(isDark) {
+    network_data.nodes.forEach((node) => {
+        let data_entry = raw_data[ids.indexOf(node.id)];
+        node.font = {'size' : 14 * (Math.log10(data_entry.complexity_level)+1)};
+        if (isDark) {
+            node.font['color'] = 'white';
+            var colors = colors_dark;
+        } else {
+            node.font['color'] = 'black';
+            var colors = colors_light;
+        }
+        if ('field' in data_entry) {
+            if (data_entry.field in colors) {
+                node.color = colors[data_entry.field];
+            } else {
+                node.color = colors['default'];
+            }
+        } else {
+            node.color = colors['default'];
+        }
+        network_data.nodes.update(node);
+    });
+}

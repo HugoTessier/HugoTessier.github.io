@@ -54,23 +54,20 @@
 </div>
 <script type="text/javascript">
 
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        colors = {
-            'topology': {'background': '#abab31', "border": "#f8f812", "highlight": {'background': '#cdcd00', "border": "#f8f812"}},
-            'statistics': {'background': '#499cd1', "border": "#14a3ff", "highlight": {'background': '#007dcd', "border": "#14a3ff"}},
-            'algebra': {'background': '#a56419', "border": "#ff8f0f", "highlight": {'background': '#e67a00', "border": "#ff8f0f"}},
-            'analysis': {'background': '#2f8e21', "border": "#47ff2b", "highlight": {'background': '#1bcc00', "border": "#47ff2b"}},
-            'default': {'background': '#5d5d5d', "border": "#b9b9b9", "highlight": {'background': '#949494', "border": "#b9b9b9"}}
-        };
-    } else {
-        colors = {
-            'topology': {'background': '#f1f148', "border": "#c3cc00", "highlight": {'background': '#ffff00', "border": "#c3cc00"}},
-            'statistics': {'background': '#76caff', "border": "#295f82", "highlight": {'background': '#31afff', "border": "#005389"}},
-            'algebra': {'background': '#ffb22e', "border": "#bc7700", "highlight": {'background': '#ffa100', "border": "#bc7700"}},
-            'analysis': {'background': '#70ef5e', "border": "#3f8436", "highlight": {'background': '#1dff00', "border": "#3f8436"}},
-            'default': {'background': '#bebebe', "border": "#717171", "highlight": {'background': '#dadada', "border": "#404040"}}
-        };
-    }
+    colors_dark = {
+        'topology': {'background': '#abab31', "border": "#f8f812", "highlight": {'background': '#cdcd00', "border": "#f8f812"}},
+        'statistics': {'background': '#499cd1', "border": "#14a3ff", "highlight": {'background': '#007dcd', "border": "#14a3ff"}},
+        'algebra': {'background': '#a56419', "border": "#ff8f0f", "highlight": {'background': '#e67a00', "border": "#ff8f0f"}},
+        'analysis': {'background': '#2f8e21', "border": "#47ff2b", "highlight": {'background': '#1bcc00', "border": "#47ff2b"}},
+        'default': {'background': '#5d5d5d', "border": "#b9b9b9", "highlight": {'background': '#949494', "border": "#b9b9b9"}}
+    };
+    colors_light = {
+        'topology': {'background': '#f1f148', "border": "#c3cc00", "highlight": {'background': '#ffff00', "border": "#c3cc00"}},
+        'statistics': {'background': '#76caff', "border": "#295f82", "highlight": {'background': '#31afff', "border": "#005389"}},
+        'algebra': {'background': '#ffb22e', "border": "#bc7700", "highlight": {'background': '#ffa100', "border": "#bc7700"}},
+        'analysis': {'background': '#70ef5e', "border": "#3f8436", "highlight": {'background': '#1dff00', "border": "#3f8436"}},
+        'default': {'background': '#bebebe', "border": "#717171", "highlight": {'background': '#dadada', "border": "#404040"}}
+    };
 
     const userLang = navigator.language || navigator.userLanguage;
     if (userLang == 'fr' || userLang == 'french') {
@@ -92,6 +89,10 @@
 
     initialize_network();
     autocomplete();
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        darkModeEvent(event.matches)
+    });
 
 </script>
 </body>

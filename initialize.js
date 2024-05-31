@@ -55,6 +55,13 @@ function initialize_network() {
         nodes.forEach((node) => {
             let data_entry = raw_data[ids.indexOf(node.id)];
             node.font = {'size' : 14 * (Math.log10(data_entry.complexity_level)+1)};
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                node.font['color'] = 'white';
+                var colors = colors_dark;
+            } else {
+                node.font['color'] = 'black';
+                var colors = colors_light;
+            }
             if ('field' in data_entry) {
                 if (data_entry.field in colors) {
                     node.color = colors[data_entry.field];
@@ -63,11 +70,6 @@ function initialize_network() {
                 }
             } else {
                 node.color = colors['default'];
-            }
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                node.font['color'] = 'white';
-            } else {
-                node.font['color'] = 'black';
             }
         });
 
