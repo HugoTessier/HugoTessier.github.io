@@ -1,0 +1,17 @@
+{
+  "id": "linear_span",
+  "field": "algebra",
+  "label": {
+    "english": "Linear Span",
+    "french": "Sous-espace vectoriel engendré"
+  },
+  "edge_to": [
+    "linear_subspace"
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Linear_span",
+    "https://fr.wikipedia.org/wiki/Sous-espace_vectoriel_engendr%C3%A9"
+  ],
+  "articles": {
+  }
+}

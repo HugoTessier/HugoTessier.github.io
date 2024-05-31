@@ -1,6 +1,21 @@
 {
   "files": [
-    "nodes/a.json",
-    "nodes/b.json"
+    "nodes/abelian_group.json",
+    "nodes/cook_distance.json",
+    "nodes/covariance.json",
+    "nodes/errors_and_residuals.json",
+    "nodes/field.json",
+    "nodes/group.json",
+    "nodes/hat_matrix.json",
+    "nodes/kernel.json",
+    "nodes/leverage.json",
+    "nodes/linear_span.json",
+    "nodes/linear_subspace.json",
+    "nodes/rank.json",
+    "nodes/ring.json",
+    "nodes/row_and_column_space.json",
+    "nodes/standard_score.json",
+    "nodes/studentized_residual.json",
+    "nodes/t_statistic.json"
   ]
 }

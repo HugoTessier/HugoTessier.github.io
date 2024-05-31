@@ -1,0 +1,17 @@
+{
+  "id": "standard_score",
+  "field": "statistics",
+  "label": {
+    "english": "Standard score",
+    "french": "Cote Z"
+  },
+  "edge_to": [
+    "error_and_residuals"
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Standard_score",
+    "https://fr.wikipedia.org/wiki/Cote_Z_(statistiques)"
+  ],
+  "articles": {
+  }
+}

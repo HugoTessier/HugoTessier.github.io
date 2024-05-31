@@ -1,0 +1,17 @@
+{
+  "id": "studentized_residual",
+  "field": "statistics",
+  "label": {
+    "english": "Studentized Residual",
+    "french": "Résidus studentisé"
+  },
+  "edge_to": [
+    "error_and_residuals",
+    "hat_matrix"
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Studentized_residual"
+  ],
+  "articles": {
+  }
+}

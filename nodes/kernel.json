@@ -1,0 +1,16 @@
+{
+  "id": "kernel",
+  "field": "algebra",
+  "label": {
+    "english": "Kernel",
+    "french": "Noyau"
+  },
+  "edge_to": [
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Kernel_(algebra)",
+    "https://fr.wikipedia.org/wiki/Noyau_(alg%C3%A8bre)"
+  ],
+  "articles": {
+  }
+}

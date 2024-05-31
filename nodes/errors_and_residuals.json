@@ -1,0 +1,15 @@
+{
+  "id": "error_and_residuals",
+  "field": "statistics",
+  "label": {
+    "english": "Errors and Residuals",
+    "french": "Erreurs et résidus"
+  },
+  "edge_to": [
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Errors_and_residuals"
+  ],
+  "articles": {
+  }
+}

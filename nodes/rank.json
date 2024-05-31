@@ -1,0 +1,16 @@
+{
+  "id": "rank",
+  "field": "algebra",
+  "label": {
+    "english": "Rank",
+    "french": "Rang"
+  },
+  "edge_to": [
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Rang_(alg%C3%A8bre_lin%C3%A9aire)",
+    "https://en.wikipedia.org/wiki/Rank_(linear_algebra)"
+  ],
+  "articles": {
+  }
+}

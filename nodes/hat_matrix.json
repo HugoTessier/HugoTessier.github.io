@@ -1,0 +1,19 @@
+{
+  "id": "hat_matrix",
+  "field": "statistics",
+  "label": {
+    "english": "Hat Matrix",
+    "french": "Matrice de projection"
+  },
+  "edge_to": [
+    "design_matrix",
+    "ordinary_least_square",
+    "row_and_column_space",
+    "covariance"
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Projection_matrix"
+  ],
+  "articles": {
+  }
+}

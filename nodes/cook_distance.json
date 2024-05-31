@@ -1,0 +1,18 @@
+{
+  "id": "cook_distance",
+  "field": "statistics",
+  "label": {
+    "english": "Cook's Distance",
+    "french": "Distance de Cook"
+  },
+  "edge_to": [
+    "leverage",
+    "error_and_residuals"
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Distance_de_Cook",
+    "https://en.wikipedia.org/wiki/Cook%27s_distance"
+  ],
+  "articles": {
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "field",
+  "field": "algebra",
+  "label": {
+    "english": "Field",
+    "french": "Corps commutatif"
+  },
+  "edge_to": [
+    "ring",
+    "group"
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique",
+    "https://www.editions-ellipses.fr/PDF/9782340033283_extrait.pdf",
+    "https://en.wikipedia.org/wiki/Algebraic_structure",
+    "https://en.wikipedia.org/wiki/Field_(mathematics)"
+  ],
+  "articles": {
+  }
+}

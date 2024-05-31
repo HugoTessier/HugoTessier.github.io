@@ -1,0 +1,16 @@
+{
+  "id": "leverage",
+  "field": "statistics",
+  "label": {
+    "english": "Leverage",
+    "french": "Point Levier"
+  },
+  "edge_to": [
+    "hat_matrix"
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Leverage_(statistics)"
+  ],
+  "articles": {
+  }
+}

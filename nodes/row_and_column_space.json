@@ -1,0 +1,20 @@
+{
+  "id": "row_and_column_space",
+  "field": "algebra",
+  "label": {
+    "english": "Row and Column Space",
+    "french": "Espace colonne\net espace des rangées"
+  },
+  "edge_to": [
+    "kernel",
+    "rank",
+    "linear_subspace",
+    "field"
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Espace_colonne_et_espace_des_rang%C3%A9es",
+    "https://en.wikipedia.org/wiki/Row_and_column_spaces"
+  ],
+  "articles": {
+  }
+}

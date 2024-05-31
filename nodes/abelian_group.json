@@ -1,0 +1,20 @@
+{
+  "id": "abelian_group",
+  "field": "algebra",
+  "label": {
+    "english": "Abelian Group",
+    "french": "Groupe abélien"
+  },
+  "edge_to": [
+    "group"
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Groupe_ab%C3%A9lien",
+    "https://en.wikipedia.org/wiki/Abelian_group",
+    "https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique",
+    "https://www.editions-ellipses.fr/PDF/9782340033283_extrait.pdf",
+    "https://en.wikipedia.org/wiki/Algebraic_structure"
+  ],
+  "articles": {
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "t_statistic",
+  "field": "statistics",
+  "label": {
+    "english": "t-statistic",
+    "french": "Statistique t"
+  },
+  "edge_to": [
+    "error_and_residuals"
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/T-statistic",
+    "https://fr.wikipedia.org/wiki/Test_de_Student",
+    "https://en.wikipedia.org/wiki/Student%27s_t-test"
+  ],
+  "articles": {
+  }
+}

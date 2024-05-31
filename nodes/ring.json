@@ -1,0 +1,20 @@
+{
+  "id": "ring",
+  "field": "algebra",
+  "label": {
+    "english": "Ring",
+    "french": "Anneau"
+  },
+  "edge_to": [
+    "abelian_group"
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Ring_(mathematics)",
+    "https://fr.wikipedia.org/wiki/Anneau_commutatif",
+    "https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique",
+    "https://www.editions-ellipses.fr/PDF/9782340033283_extrait.pdf",
+    "https://en.wikipedia.org/wiki/Algebraic_structure"
+  ],
+  "articles": {
+  }
+}

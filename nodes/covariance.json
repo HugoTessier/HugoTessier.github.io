@@ -1,0 +1,16 @@
+{
+  "id": "covariance",
+  "field": "statistics",
+  "label": {
+    "english": "Covariance",
+    "french": "Covariance"
+  },
+  "edge_to": [
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Covariance",
+    "https://en.wikipedia.org/wiki/Covariance"
+  ],
+  "articles": {
+  }
+}

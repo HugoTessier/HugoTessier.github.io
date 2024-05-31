@@ -1,0 +1,16 @@
+{
+  "id": "linear_subspace",
+  "field": "algebra",
+  "label": {
+    "english": "Linear Subspace",
+    "french": "Sous-espace vectoriel"
+  },
+  "edge_to": [
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Linear_subspace",
+    "https://fr.wikipedia.org/wiki/Sous-espace_vectoriel"
+  ],
+  "articles": {
+  }
+}
