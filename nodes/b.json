@@ -5,11 +5,19 @@
     "english": "Node B",
     "french": "Nœud B"
   },
-  "vulgarized": {
-    "english": "I am B.",
-    "french": "Je suis B."
-  },
   "edge_to": [
     "C"
-  ]
+  ],
+  "articles": {
+    "vulgarized": {
+      "english": [
+        "Vulgarized",
+        "I am A vulgarized. $$\\sum_{n=0}^N a^n$$"
+      ],
+      "french": [
+        "Vulgarisé",
+        "Je suis A vulgarisé."
+      ]
+    }
+  }
 }

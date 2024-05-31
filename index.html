@@ -35,38 +35,44 @@
                 <input id='formSubmit' type="submit" value="Submit" onclick="formSelectAction()">
             </form>
         </div>
-        <button class="btn btn-secondary btn-lg" id="french_button" onclick="toFrench()" style="width:20vh;">French</button>
-        <button class="btn btn-secondary btn-lg" id="english_button" onclick="toEnglish()" style="width:20vh;">English</button>
+        <button class="btn btn-secondary btn-lg" id="french_button" onclick="toFrench()" style="width:20vh;">French
+        </button>
+        <button class="btn btn-secondary btn-lg" id="english_button" onclick="toEnglish()" style="width:20vh;">English
+        </button>
 
     </div>
     <div id="mynetwork" class="container min-vh-50 vh-50"></div>
     <div id="description" style="display:none">
-        <div id="description_buttons" class="row justify-content-md-center">
-            <button class="col btn btn-primary btn-lg" id="vulgarized_button" onclick="showVulgarized()">Vulgarized</button>
-            <button class="col btn btn-primary btn-lg" id="definition_button" onclick="showDefinition()">Definition</button>
-            <button class="col btn btn-primary btn-lg" id="details_button" onclick="showDetails()">Details</button>
-            <button class="col btn btn-primary btn-lg" id="links_button" onclick="showLinks()">Links</button>
-            <button class="col btn btn-primary btn-lg" id="linked_nodes_button" onclick="showLinkedNodes()">Related to...</button>
-            <button class="col btn btn-primary btn-lg" id="reference_nodes_button" onclick="showReferenceNodes()">Referenced by...</button>
-        </div>
+        <div id="secondary_description_buttons" class="row justify-content-md-center"></div>
+        <div id="primary_description_buttons" class="row justify-content-md-center"></div>
         <div id="description_content" style="display:block" class="container"></div>
     </div>
 </div>
 <script type="text/javascript">
 
-    colors_dark = {
+    const colors_dark = {
         'topology': {'background': '#abab31', "border": "#f8f812", "highlight": {'background': '#cdcd00', "border": "#f8f812"}},
         'statistics': {'background': '#499cd1', "border": "#14a3ff", "highlight": {'background': '#007dcd', "border": "#14a3ff"}},
         'algebra': {'background': '#a56419', "border": "#ff8f0f", "highlight": {'background': '#e67a00', "border": "#ff8f0f"}},
         'analysis': {'background': '#2f8e21', "border": "#47ff2b", "highlight": {'background': '#1bcc00', "border": "#47ff2b"}},
         'default': {'background': '#5d5d5d', "border": "#b9b9b9", "highlight": {'background': '#949494', "border": "#b9b9b9"}}
     };
-    colors_light = {
+    const colors_light = {
         'topology': {'background': '#f1f148', "border": "#c3cc00", "highlight": {'background': '#ffff00', "border": "#c3cc00"}},
         'statistics': {'background': '#76caff', "border": "#295f82", "highlight": {'background': '#31afff', "border": "#005389"}},
         'algebra': {'background': '#ffb22e', "border": "#bc7700", "highlight": {'background': '#ffa100', "border": "#bc7700"}},
         'analysis': {'background': '#70ef5e', "border": "#3f8436", "highlight": {'background': '#1dff00', "border": "#3f8436"}},
         'default': {'background': '#bebebe', "border": "#717171", "highlight": {'background': '#dadada', "border": "#404040"}}
+    };
+
+    const textTranslation = {
+        'formInput' : {'english': 'Search for a notion...', 'french': 'Rechercher une notion...'},
+        'formSubmit' : {'english': 'Submit', 'french': 'Envoyer'},
+        'french_button' : {'english': 'French', 'french': 'Français'},
+        'english_button' : {'english': 'English', 'french': 'Anglais'},
+        'links_button' : {'english': 'Links', 'french': 'Liens'},
+        'related_button' : {'english': 'Related to...', 'french': 'Dépend de...'},
+        'reference_button' : {'english': 'Referenced by...', 'french': 'Référencé par...'},
     };
 
     const userLang = navigator.language || navigator.userLanguage;
@@ -79,12 +85,14 @@
     var nodes = [];
     var edges = [];
     var ids = [];
-    var current_description = null;
-    var current_id = null;
+    var current_id = -1;
+    var current_section = null;
     var nodes_dataset = null;
     var edges_dataset = null;
     var network = null;
     var network_data = null;
+
+    var buttons_list = {};
 
 
     initialize_network();

@@ -27,12 +27,25 @@ function getDependencies(data_element) {
 }
 
 function updateButtonsStyle(name) {
-    const button_ids = ['vulgarized_button', "definition_button", "details_button", "links_button", "linked_nodes_button", "reference_nodes_button"]
+    const button_ids = ["links_button", "related_button", "reference_button"]
     button_ids.forEach((id) => {
-        if (name == id) {
-            document.getElementById(id).classList.add('active');
-        } else {
-            document.getElementById(id).classList.remove('active');
+        let current_button = document.getElementById(id);
+        if (current_button) {
+            if (name == id) {
+                document.getElementById(id).classList.add('active');
+            } else {
+                document.getElementById(id).classList.remove('active');
+            }
+        }
+    });
+    Object.keys(buttons_list).forEach((id) => {
+        let current_button = document.getElementById(id);
+        if (current_button) {
+            if (name == id) {
+                document.getElementById(id).classList.add('active');
+            } else {
+                document.getElementById(id).classList.remove('active');
+            }
         }
     });
 }
@@ -142,7 +155,7 @@ function formSelectAction() {
     }
     if (id != null) {
         network.selectNodes([id], [false]);
-        setDescription(ids.indexOf(id));
+        prepareDescription(ids.indexOf(id));
     }
     document.getElementById('myForm').reset();
 }

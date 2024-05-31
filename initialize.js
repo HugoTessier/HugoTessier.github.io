@@ -89,11 +89,10 @@ function initialize_network() {
         network.on("click", function(clickProperties) {
             if(clickProperties.nodes.length == 1) {
                 var id = ids.indexOf(clickProperties.nodes[0]);
-
-                setDescription(id);
+                prepareDescription(id);
             } else if(clickProperties.nodes.length == 0) {
                 document.getElementById("description").style.display = 'none';
-                current_description = null;
+                current_id = -1;
             }
         });
 
