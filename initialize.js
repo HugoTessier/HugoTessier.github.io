@@ -86,12 +86,20 @@ function initialize_network() {
         var options = {
             "physics": {
                 "barnesHut": {
-                    "springConstant": 0.025,
+                    "springConstant": 0.015,
                     "avoidOverlap": 0.5
+                },
+                "stabilization": {
+                    "enabled": true,
+                    "iterations": 100
                 }
             }
         };
         network = new vis.Network(container, network_data, options);
+
+        network.on("stabilizationIterationsDone", function () {
+            network.setOptions( { 'physics': false } );
+        });
 
         network.on("click", function(clickProperties) {
             if(clickProperties.nodes.length == 1) {

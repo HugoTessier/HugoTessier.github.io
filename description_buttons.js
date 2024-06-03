@@ -1,11 +1,17 @@
+function catArticles(article) {
+    var content = "";
+    article.slice(1).forEach((data) => {content += data; content += " ";});
+    return content;
+}
+
 function showArticle(article_key) {
     if (article_key in raw_data[current_id].articles) {
         current_section = article_key;
         let current_description = raw_data[current_id].articles[article_key];
         if (mode == "english") {
-            document.getElementById("description_content").textContent = current_description.english[1];
+            document.getElementById("description_content").innerHTML = catArticles(current_description.english);
         } else {
-            document.getElementById("description_content").textContent = current_description.french[1];
+            document.getElementById("description_content").innerHTML = catArticles(current_description.french);
         }
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         updateButtonsStyle(article_key);

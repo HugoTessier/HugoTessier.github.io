@@ -16,5 +16,69 @@
     "https://en.wikipedia.org/wiki/Row_and_column_spaces"
   ],
   "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "<p>",
+        "L'espace colonne (aussi appelé espace des colonnes ou image) d'une matrice \\(A\\) est l'espace engendré par toutes les combinaisons linéaires de ses vecteurs colonne.",
+        "L'espace colonne d'une matrice est l'image de l'application linéaire correspondante.",
+        "L'espace ligne (ou espace des rangées) est défini de façon similaire.",
+        "</p>",
+        "<p>",
+        "Soit \\(\uD835\uDD42\\) un corps de scalaires.",
+        "L'espace colonne d'une matrice de taille \\(m\\times n\\) à éléments dans \\(\uD835\uDD42\\) est un sous-espace vectoriel de \\(\uD835\uDD42^m\\).",
+        "La dimension d'un espace colonne est appelé le rang d'une matrice et est au plus égal au minimum de \\(m\\) et \\(n\\). ",
+        "</p>",
+        "<p>",
+        "Ainsi, l'espace colonne de \\(A\\) est l'ensemble de tous les produits de la forme \\(A\\mathbf{x}\\) pour tout \\(\\mathbf{x}\\in\uD835\uDD42^n.\\)",
+        "On retrouve ainsi l'idée de l'image de la transformation matricielle correspondante.",
+        "De même, l'espace des rangées correspond aux produits \\(A^T\\mathbf{x}\\).",
+        "</p>"
+      ],
+      "english": [
+        "Definition",
+        "<p>",
+        "The column space (also called the range or image) of a matrix \\(A\\) is the span (set of all possible linear combinations) of its column vectors.",
+        "The column space of a matrix is the image or range of the corresponding matrix transformation.",
+        "The row space is defined similarly.",
+        "</p>",
+        "<p>",
+        "Let \\(\uD835\uDD42\\) be a field of scalars.",
+        "The column space of an \\(m\\times n\\) matrix with components from \\(\uD835\uDD42\\) is a linear subspace of the m-space \\(\uD835\uDD42^m\\).",
+        "The dimension of the column space is called the rank of the matrix and is at most \\(min(m, n)\\).",
+        "<p>",
+        "Therefore, the column space of \\(A\\) consists of all possible products \\(A\\mathbf{x}\\), for \\(\\mathbf{x}\\in\uD835\uDD42^n.\\)",
+        "This is the same as the image (or range) of the corresponding matrix transformation.",
+        "Similarly, the row space corresponds to the product \\(A^T\\mathbf{x}\\).",
+        "</p>"
+      ]
+    },
+    "explanation": {
+      "french": [
+        "Explications",
+        "<p>",
+        "Soit une matrice \\(A\\) de taille \\(m\\times n\\).",
+        "Cette matrice (dans le cas de scalaires réels) caractérise l'application suivante :",
+        "$$ \\displaylines{ℝ^n \\rightarrow ℝ^m \\\\ \\mathbf{x} \\rightarrow{A\\mathbf{x}} }$$",
+        "L'espace des colonnes est donc l'ensemble de tous les \\(A\\mathbf{x}\\).",
+        "</p>",
+        "<p>",
+        "Plus concrètement, si \\(A\\) ne comporte qu'une colonne, alors l'espace des colonnes est toute la droite qui prolonge l'unique vecteur colonne de \\(A\\).",
+        "Si \\(A\\) comporte deux vecteurs colonnes, alors l'espace des colonnes est l'ensemble du plan passant par les deux vecteurs colonnes de \\(A\\)."
+      ],
+      "english": [
+        "Explanations",
+        "<p>",
+        "Let \\(A\\) a matrix of size \\(m\\times n\\).",
+        "This matrix (in the case of real-valued scalars) characterizes the following mapping:",
+        "$$ \\displaylines{ℝ^n \\rightarrow ℝ^m \\\\ \\mathbf{x} \\rightarrow{A\\mathbf{x}} }$$",
+        "The collumn space is thus the ensemble of all \\(A\\mathbf{x}\\).",
+        "</p>",
+        "<p>",
+        "More concretely if \\(A\\) only contains one column, the the column space is the whole line that prolongates the only column vector of \\(A\\).",
+        "If \\(A\\) contains two columns, then the column space is the whole plane that passes through the two column vectors \\(A\\).",
+        "</p>"
+      ]
+    }
   }
 }

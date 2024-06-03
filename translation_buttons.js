@@ -19,7 +19,7 @@ function updateDescriptionLanguage() {
         let current_data = raw_data[current_id];
 
         if (current_section in current_data.articles) {
-            document.getElementById("description_content").textContent = current_data.articles[current_section][mode][1];
+            document.getElementById("description_content").innerHTML = catArticles(current_data.articles[current_section][mode]);
         } else if (current_section == 'related' || current_section == 'reference') {
             document.querySelectorAll('.edge-item').forEach(item => {
                 item.textContent = raw_data[ids.indexOf(item.id.replace('span_', ''))].label[mode];
