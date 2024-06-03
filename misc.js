@@ -76,8 +76,10 @@ function autocomplete() {
             }
             if (simplifyFrench(label).toUpperCase().includes(simplifyFrench(val).toUpperCase())) {
                 b = document.createElement("DIV");
-                b.innerHTML = "<strong>" + label.substr(0, val.length) + "</strong>";
-                b.innerHTML += label.substr(val.length);
+                let substr_index = simplifyFrench(label).toUpperCase().indexOf(simplifyFrench(val).toUpperCase())
+                b.innerHTML = label.substr(0, substr_index)
+                b.innerHTML += "<strong>" + label.substr(substr_index, val.length) + "</strong>";
+                b.innerHTML += label.substr(substr_index+val.length);
                 b.innerHTML += "<input type='hidden' value='" + label + "'>";
                 b.addEventListener("click", function(e) {
                     inp.value = this.getElementsByTagName("input")[0].value;

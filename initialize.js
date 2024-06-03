@@ -83,7 +83,14 @@ function initialize_network() {
           edges: edges_dataset,
         };
 
-        var options = {};
+        var options = {
+            "physics": {
+                "barnesHut": {
+                    "springConstant": 0.025,
+                    "avoidOverlap": 0.5
+                }
+            }
+        };
         network = new vis.Network(container, network_data, options);
 
         network.on("click", function(clickProperties) {
