@@ -6,12 +6,29 @@
     "french": "Sous-espace vectoriel engendré"
   },
   "edge_to": [
-    "linear_subspace"
+    "linear_subspace",
+    "field"
   ],
   "links": [
     "https://en.wikipedia.org/wiki/Linear_span",
     "https://fr.wikipedia.org/wiki/Sous-espace_vectoriel_engendr%C3%A9"
   ],
   "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Soit \\(V\\) un espace vectoriel sur un corps commutatif \\(K\\), le sous-espace engendré \\(Vect(S)\\) par l'ensemble (non-nécessairement fini) \\(S\\) de vecteurs est défini comme l'intersection \\(W\\) de tous les sous-espaces de \\(V\\) qui contiennent \\(S\\) (plus simplement, \\(W\\)) est le plus petit sous-espace possible de \\(V\\) contenant tous les éléments de \\(S\\).",
+        "Autrement, le sous-espace engendré par \\(S\\) peut aussi être défini comme l'ensemble de toutes les combinaisons linéaires finies d'éléments (vecteurs) de \\(S\\), ce qui rejoint la définition précédente.",
+        "$$Vect(S) = \\left\\{ \\sum_{i=1}^k \\lambda_i\\mathbf{v}_i \\; | \\; k\\in ℕ, \\mathbf{v}\\in S, \\lambda_i \\in K \\right\\}$$",
+        "Si l'on ne considère que les combinaisons linéaires finies (c'est à dire que \\(k\\) n'atteint pas l'infini) dans la définition précédente, c'est parce que le cas des combinaisons linéaires infinies impose des contraintes plus fortes, notamment de convergence."
+      ],
+      "english": [
+        "Definition",
+        "Given a vector space \\(V\\) over a field \\(K\\), the span of a set \\(S\\) of vectors (not necessarily finite) is defined to be the intersection \\(W\\) of all subspaces of \\(V\\) that contain \\(S\\) (or more simply, \\(W\\)) is the smallest possible subspace of \\(V\\) that contains all elements of \\(S\\).",
+        "Alternatively, the span of \\(S\\) may be defined as the set of all finite linear combinations of elements (vectors) of \\(S\\), which follows from the above definition.",
+        "$$span(S) = \\left\\{ \\sum_{i=1}^k \\lambda_i\\mathbf{v}_i \\; | \\; k\\in ℕ, \\mathbf{v}\\in S, \\lambda_i \\in K \\right\\}$$",
+        "If we only consider finite linear combination (which means that \\(k\\) does not meet infinity) in the previous definition, this is because the case of infinite linear combination imposes stronger constraints, notably concerning convergence."
+      ]
+    }
   }
 }
