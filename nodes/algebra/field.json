@@ -7,7 +7,7 @@
   },
   "edge_to": [
     "ring",
-    "group"
+    "abelian_group"
   ],
   "links": [
     "https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique",
@@ -16,5 +16,43 @@
     "https://en.wikipedia.org/wiki/Field_(mathematics)"
   ],
   "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "On appelle corps tout anneau commutatif \\( (A,+,\\times) \\) tel que tout élément non nul \\(x\\) de \\(A\\) admette un inverse, c'est à dire, un élément \\(y\\) tel que \\(x\\times y = 1_A\\).",
+        "Dit autrement, c'est un anneau dans lequel l'ensemble des éléments non nuls est un groupe pour la multiplication."
+      ],
+      "english": [
+        "Definition",
+        "We call field any commutative ring \\((A,+,\\times)\\) so that any nonzero element \\(x\\) of \\(A\\) has an inverse, namely, an element \\(y\\) so that \\(x\\times y = 1_A\\).",
+        "In other words, it is a ring in which the set of nonzero elements is a group for multiplication."
+      ]
+    },
+    "complete_def": {
+      "french": [
+        "Définition complète",
+        "Un corps commutatif est un ensemble \\(K\\) muni de deux lois internes + et \\(\\times\\) vérifiant les conditions suivantes :",
+        "<ul>",
+        "<li> \\((K, +)\\) forme un groupe abélien (ou groupe commutatif) dont l'élément neutre est noté 0 ; </li>",
+        "<li> \\( (K \\backslash \\{0\\}, \\times )\\) forme un groupe abélien dont l'élément neutre est 1 ; </li>",
+        "<li> la multiplication est distributive par rapport à l'addition (à gauche comme à droite) c’est-à-dire que : </li>",
+        "$$ \\forall(a,b,c) \\in K^3 \\qquad a\\times(b+c)=a\\times b+a\\times c \\qquad\\text{et} \\qquad (b+c)\\times a = b\\times a + c\\times a$$",
+        "</ul>",
+        "On parle alors du corps commutatif \\((K,+,\\times)\\).",
+        "<p>Nota Bene : En français, un corps peut être non-commutatif, et l'on parle alors de corps gauche au lieu de corps commutatif.</p>"
+      ],
+      "english": [
+        "Complete definition",
+        "A field is a set \\(K\\) with two operators + and \\(\\times\\) that verify the following conditions:",
+        "<ul>",
+        "<li> \\((K, +)\\) is an abelian group whose neutral element is 0; </li>",
+        "<li> \\( (K\\backslash \\{0\\}, \\times) \\) is an abelian group whose neutral element is 1 ; </li>",
+        "<li> the multiplication is distributive with regard to the addition (on both left and right), namely: </li>",
+        "$$ \\forall(a,b,c) \\in K^3 \\qquad a\\times(b+c)=a\\times b+a\\times c \\qquad\\text{et} \\qquad (b+c)\\times a = b\\times a + c\\times a$$",
+        "</ul>",
+        "We therefore talk about the field \\((K,+,\\times)\\).",
+        "<p>Nota Bene : A non-commutative field is called a division ring.</p>"
+      ]
+    }
   }
 }
