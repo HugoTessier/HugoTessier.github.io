@@ -1,6 +1,7 @@
 {
   "files": [
     "./nodes/ring.json",
+    "./nodes/vector_space.json",
     "./nodes/group.json",
     "./nodes/t_statistic.json",
     "./nodes/row_and_column_space.json",

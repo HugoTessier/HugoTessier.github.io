@@ -8,7 +8,7 @@
   "edge_to": [
     "kernel",
     "rank",
-    "linear_subspace",
+    "linear_span",
     "field"
   ],
   "links": [

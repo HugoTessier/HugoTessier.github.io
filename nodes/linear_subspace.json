@@ -6,11 +6,40 @@
     "french": "Sous-espace vectoriel"
   },
   "edge_to": [
+    "vector_space"
   ],
   "links": [
     "https://en.wikipedia.org/wiki/Linear_subspace",
     "https://fr.wikipedia.org/wiki/Sous-espace_vectoriel"
   ],
   "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Un sous-espace vectoriel d'un espace vectoriel \\(E\\) est une partie non vide \\(F\\), de \\(E\\), stable par combinaisons linéaires.",
+        "Cela implique que la somme de deux vecteurs de \\(F\\) appartient à \\(F\\), et que le produit d'un vecteur de \\(F\\) par un scalaire appartient à \\(F\\).",
+        "De fait, un sous-espace vectoriel doit alors lui-même respecter toutes les propriétés d'un espace vectoriel."
+      ],
+      "english": [
+        "Definition",
+        "A linear subspace of a vector space \\(E\\) is a nonempty subset \\(F\\) of \\(E\\) that is stable by linear combination.",
+        "This implies that the sum of two vectors from \\(F\\) still belongs to \\(F\\), and that the product of a vector of \\(F\\) with a scalar still belongs to \\(F\\).",
+        "Therefore, a linear subspace needs to meet all the properties of a regular vector space."
+      ]
+    },
+    "explanation": {
+      "french": [
+        "Explications",
+        "Prenons l'exemple d'un espace de vecteurs réels de longueur 2, soit \\(ℝ\\times ℝ\\).",
+        "Le sous-ensemble des vecteurs dont le deuxième terme est nul, soit \\(ℝ\\times\\{\\mathbf{0}\\}\\), est un sous-espace vectoriel.",
+        "Le sous-ensemble \\([-1, 1]^2\\) n'en est pas un : le vecteur \\((0.5,-0.5)\\) en fait partie, mais \\(10\\cdot(0.5,-0.5) = (5,-5)\\) n'en fait plus partie ; donc cet ensemble n'est pas stable par produit avec un scalaire (ni par addition)."
+      ],
+      "english": [
+        "Explanations",
+        "Let's take the example of a space of real-valued vectors of length 2, namely \\(ℝ\\times ℝ\\).",
+        "The subspace of vectors whose second term is zero, namely \\(ℝ\\times\\{\\mathbf{0}\\}\\), is a linear subspace.",
+        "The subspace \\([-1, 1]^2\\) is not: the vector \\((0.5,-0.5)\\) belongs to it, but \\(10\\cdot(0.5,-0.5) = (5,-5)\\) does not; this subspace is therefore not stable by product with a scalar (nor by addition)."
+      ]
+    }
   }
 }

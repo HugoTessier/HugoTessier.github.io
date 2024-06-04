@@ -1,0 +1,26 @@
+{
+  "id": "vector_space",
+  "field": "algebra",
+  "label": {
+    "english": "Vector Space",
+    "french": "Espace vectoriel"
+  },
+  "edge_to": [
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Vector_space",
+    "https://fr.wikipedia.org/wiki/Espace_vectoriel"
+  ],
+  "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        ""
+      ],
+      "english": [
+        "Definition",
+        ""
+      ]
+    }
+  }
+}

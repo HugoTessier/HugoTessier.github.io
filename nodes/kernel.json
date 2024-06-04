@@ -16,7 +16,7 @@
     "linealg_def": {
       "french": [
         "Définition pour l'algèbre linéaire",
-        "Le noyau d'une application linéaire est l'ensemble (ou le sous-espace vectoriel) du domaine de définition dont l'image correspond au vecteur nul.",
+        "Le noyau d'une application linéaire est la partie (ou le sous-espace vectoriel) du domaine de définition dont l'image correspond au vecteur nul.",
         "Soit \\(L: X\\rightarrow Y\\) une application linéaire de \\(X\\) dans \\(Y\\), le noyau \\(ker(L)\\) correspond à :",
         "$$ker(L) = \\left\\{\\mathbf{x}\\in X \\;|\\; L(\\mathbf{x}) = \\mathbf{0} \\right\\} = L^{-1}(\\mathbf{0})$$"
       ],
