@@ -6,6 +6,7 @@ function catArticles(article) {
 
 function showArticle(article_key) {
     if (article_key in raw_data[current_id].articles) {
+        updateButtonsStyle(article_key+"_button");
         current_section = article_key;
         let current_description = raw_data[current_id].articles[article_key];
         if (mode == "english") {
@@ -14,8 +15,8 @@ function showArticle(article_key) {
             document.getElementById("description_content").innerHTML = catArticles(current_description.french);
         }
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        updateButtonsStyle(article_key);
     } else {
+        updateButtonsStyle(null);
         current_section = null;
         document.getElementById("description_content").textContent = '';
     }
