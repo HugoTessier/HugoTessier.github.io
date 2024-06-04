@@ -75,7 +75,7 @@
         "The collumn space is thus the ensemble of all \\(A\\mathbf{x}\\).",
         "</p>",
         "<p>",
-        "More concretely if \\(A\\) only contains one column, the the column space is the whole line that prolongates the only column vector of \\(A\\).",
+        "More concretely if \\(A\\) only contains one column, then the column space is the whole line that prolongates the only column vector of \\(A\\).",
         "If \\(A\\) contains two columns, then the column space is the whole plane that passes through the two column vectors \\(A\\).",
         "</p>"
       ]

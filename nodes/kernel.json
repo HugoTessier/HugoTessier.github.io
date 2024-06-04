@@ -6,11 +6,26 @@
     "french": "Noyau"
   },
   "edge_to": [
+    "linear_subspace"
   ],
   "links": [
     "https://en.wikipedia.org/wiki/Kernel_(algebra)",
     "https://fr.wikipedia.org/wiki/Noyau_(alg%C3%A8bre)"
   ],
   "articles": {
+    "linealg_def": {
+      "french": [
+        "Définition pour l'algèbre linéaire",
+        "Le noyau d'une application linéaire est l'ensemble (ou le sous-espace vectoriel) du domaine de définition dont l'image correspond au vecteur nul.",
+        "Soit \\(L: X\\rightarrow Y\\) une application linéaire de \\(X\\) dans \\(Y\\), le noyau \\(ker(L)\\) correspond à :",
+        "$$ker(L) = \\left\\{\\mathbf{x}\\in X \\;|\\; L(\\mathbf{x}) = \\mathbf{0} \\right\\} = L^{-1}(\\mathbf{0})$$"
+      ],
+      "english": [
+        "Definition for linear algebra",
+        "The kernel of a linear map is the part (or linear subspace) of the domain which the map maps to the zero vector.",
+        "Let \\(L: X\\rightarrow Y\\) a linear map from \\(X\\) to \\(Y\\), the kernel \\(ker(L)\\) equates to:",
+        "$$ker(L) = \\left\\{\\mathbf{x}\\in X \\;|\\; L(\\mathbf{x}) = \\mathbf{0} \\right\\} = L^{-1}(\\mathbf{0})$$"
+      ]
+    }
   }
 }
