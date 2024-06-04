@@ -6,20 +6,92 @@
     "french": "Espace vectoriel"
   },
   "edge_to": [
+    "field",
+    "abelian_group"
   ],
   "links": [
     "https://en.wikipedia.org/wiki/Vector_space",
     "https://fr.wikipedia.org/wiki/Espace_vectoriel"
   ],
   "articles": {
+    "simplified": {
+      "french": [
+        "Définition simplifiée",
+        "Un espace vectoriel est un espace dans lequel on peut définir des vecteurs, et qui est stable par combinaisons linéaires de ces vecteurs (le résultat de ces combinaisons est lui-même inclu dans le même espace vectoriel)."
+      ],
+      "english": [
+        "Simplified definition",
+        "A vector space is a space in which one can define vectors, and that is stable by linear combination of these vectors (the result of these combinations is included in the same vector space)."
+      ]
+    },
     "definition": {
       "french": [
         "Définition",
-        ""
+        "Soit un corps commutatif \\(K\\).",
+        "Un espace vectoriel sur \\(K\\) (ou \\(K\\)-espace vectoriel) est un ensemble \\(E\\) dont les éléments sont appelés vecteurs (ou plus rarement points) munis de deux lois :",
+        "<ul>",
+        "<li>une loi de composition interne « + » : \\(E^2\\rightarrow E\\), appelée addition ou somme vectorielle,</li>",
+        "<li>une loi de composition externe à gauche « • » : \\(K\\times E\\rightarrow E\\), appelée multiplication par un scalaire.</li>",
+        "</ul>",
+        "Soit trois vecteurs \\(\\mathbf{u}\\), \\(\\mathbf{v}\\) et \\(\\mathbf{w}\\) de \\(E\\), et \\(\\lambda\\) \\(\\mu\\) des scalaires dans \\(K\\).",
+        "Les deux lois + et • doivent respecter les propriétés suivantes :",
+        "<ul>",
+        "<li>",
+        "\\((E,+)\\) est un groupe abélien, c'est à dire que :",
+        "<ul>",
+        "<li>la loi + est commutative : \\(\\mathbf{u}+\\mathbf{v} = \\mathbf{v} + \\mathbf{u}\\),</li>",
+        "<li>elle est associative : \\(\\mathbf{u}+(\\mathbf{v}+\\mathbf{w}) = (\\mathbf{u}+\\mathbf{v})+\\mathbf{w}\\),</li>",
+        "<li>elle admet un élément neutre \\(\\mathbf{0}_E\\) appelé vecteur nul : \\(\\mathbf{v}+\\mathbf{0}_E = \\mathbf{v}\\),</li>",
+        "<li>tout vecteur \\(\\mathbf{v}\\) a un opposé \\(-\\mathbf{v}\\) : \\(\\mathbf{v} + (-\\mathbf{v}) = \\mathbf{0}_E\\).</li>",
+        "</ul>",
+        "</li>",
+        "<li>",
+        "La loi • vérifie les propriétés suivantes :",
+        "<ul>",
+        "<li>elle est distributive à gauche par rapport à la loi + : \\( \\lambda \\cdot (\\mathbf{u}+\\mathbf{v}) = (\\lambda\\cdot\\mathbf{u}) + (\\lambda\\cdot\\mathbf{v}) \\) </li>",
+        "<li>elle est distributive à droite par rapport à l'addition du corps \\(K\\) : \\( (\\lambda + \\mu)\\cdot \\mathbf{v} = (\\lambda\\cdot\\mathbf{u})+(\\mu\\cdot\\mathbf{v})\\)</li>",
+        "<li>elle vérifie une associativité mixte par rapport à la multiplication dans \\(K\\) : \\( (\\lambda \\mu)\\cdot \\mathbf{v} = \\lambda\\cdot(\\mathbf{v}\\cdot\\mu)\\)</li>",
+        "<li>l'élément neutre multiplicatif de \\(K\\), noté \\(1_K\\), est neutre à gauche pour • : \\(1_K\\cdot\\mathbf{v} = \\mathbf{v}\\). </li>",
+        "</ul>",
+        "</li>",
+        "</ul>",
+        "Ces axiomes impliquent que \\(E\\) est non vide (puisque au moins \\(\\mathbf{0}_E\\) appartient \\(E\\)) et pour tout vecteur \\(\\mathbf{u}\\) de \\(E\\) et tout scalaire \\(\\lambda\\) :",
+        "\\(\\lambda\\cdot\\mathbf{u} = \\mathbf{0}_E \\iff (\\lambda = 0_K \\text{ ou } \\mathbf{u} = \\mathbf{0}_E)\\)",
+        "&ensp; et &ensp; \\( (-\\lambda)\\cdot\\mathbf{u} =-(\\lambda)\\cdot\\mathbf{u}) = \\lambda\\cdot(-\\mathbf{u})  \\)."
       ],
       "english": [
         "Definition",
-        ""
+        "Let \\(K\\) be a field.",
+        "A vector space on \\(K\\) (or \\(K\\)-vector space) is a set \\(E\\) whose elements are called vectors (or more rarely points) equipped with two operators:",
+        "<ul>",
+        "<li>a binary operation + : \\(E^2\\rightarrow E\\), called addition or vectorial sum,</li>",
+        "<li>a binary function to the left • : \\(K\\times E\\rightarrow E\\), called multiplication by a scalar.</li>",
+        "</ul>",
+        "Let three vectors \\(\\mathbf{u}\\), \\(\\mathbf{v}\\) and \\(\\mathbf{w}\\) in \\(E\\), and \\(\\lambda\\) \\(\\mu\\) scalars from \\(K\\).",
+        "The two operators  + and • must respect the following properties:",
+        "<ul>",
+        "<li>",
+        "\\((E,+)\\) is an abelian group, which means:",
+        "<ul>",
+        "<li>+ is commutative: \\(\\mathbf{u}+\\mathbf{v} = \\mathbf{v} + \\mathbf{u}\\),</li>",
+        "<li>+ is associative: \\(\\mathbf{u}+(\\mathbf{v}+\\mathbf{w}) = (\\mathbf{u}+\\mathbf{v})+\\mathbf{w}\\),</li>",
+        "<li>+ accepts a neutral element \\(\\mathbf{0}_E\\) called null vector: \\(\\mathbf{v}+\\mathbf{0}_E = \\mathbf{v}\\),</li>",
+        "<li>any vector \\(\\mathbf{v}\\) has an opposite \\(-\\mathbf{v}\\): \\(\\mathbf{v} + (-\\mathbf{v}) = \\mathbf{0}_E\\).</li>",
+        "</ul>",
+        "</li>",
+        "<li>",
+        "The operator • respects the following properties:",
+        "<ul>",
+        "<li>it is distributive on the left with respect to the + operator: \\( \\lambda \\cdot (\\mathbf{u}+\\mathbf{v}) = (\\lambda\\cdot\\mathbf{u}) + (\\lambda\\cdot\\mathbf{v}) \\) </li>",
+        "<li>it is distributive on the right with respect from the addition from the field \\(K\\): \\( (\\lambda + \\mu)\\cdot \\mathbf{v} = (\\lambda\\cdot\\mathbf{u})+(\\mu\\cdot\\mathbf{v})\\)</li>",
+        "<li>it verifies a mixt associativity with respect to the multiplication in \\(K\\): \\( (\\lambda \\mu)\\cdot \\mathbf{v} = \\lambda\\cdot(\\mathbf{v}\\cdot\\mu)\\)</li>",
+        "<li>the multiplicative neutral element of \\(K\\), denoted \\(1_K\\), is neutral to the left for •: \\(1_K\\cdot\\mathbf{v} = \\mathbf{v}\\). </li>",
+        "</ul>",
+        "</li>",
+        "</ul>",
+        "These axioms imply that \\(E\\) is nonempty (since at least \\(\\mathbf{0}_E\\) belongs to \\(E\\)) and that for any vector \\(\\mathbf{u}\\) in \\(E\\) and any scalar \\(\\lambda\\):",
+        "\\(\\lambda\\cdot\\mathbf{u} = \\mathbf{0}_E \\iff (\\lambda = 0_K \\text{ ou } \\mathbf{u} = \\mathbf{0}_E)\\)",
+        "&ensp; and &ensp; \\( (-\\lambda)\\cdot\\mathbf{u} =-(\\lambda)\\cdot\\mathbf{u}) = \\lambda\\cdot(-\\mathbf{u})  \\)."
       ]
     }
   }
