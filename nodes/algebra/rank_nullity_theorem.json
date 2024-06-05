@@ -1,0 +1,110 @@
+{
+  "id": "rank_nullity_theorem",
+  "field": "algebra",
+  "label": {
+    "english": "Rank–nullity theorem",
+    "french": "Théorème du rang"
+  },
+  "edge_to": [
+    "rank",
+    "kernel"
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_du_rang",
+    "https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem"
+  ],
+  "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Soient \\(E\\) et \\(F\\) deux espaces vectoriels (de dimensions finies ou infinies) sur un corps \\(K\\) et soit \\(f\\in L(E,F)\\) une application linéaire.",
+        "Alors \\(rg(f)+dim(ker(f))=dim(E)\\) où \\(rg(f)\\) est la dimension de l'image de \\(f\\)."
+      ],
+      "english": [
+        "Definition",
+        "Let \\(E\\) et \\(F\\) two (finite or infinite) vector spaces with values from a field \\(K\\) and \\(f\\in L(E,F)\\) a linear map.",
+        "Then \\(rank(f)+dim(ker(f))=dim(E)\\) where \\(rank(f)\\) is the dimension of the image of \\(f\\); \\(dim(ker(f))\\) is also called \\(Nullity(f)\\)."
+      ]
+    },
+    "proof": {
+      "french": [
+        "Preuve",
+        "<ul>",
+        "<li>Soit \\(f:E\\rightarrow F\\) une application linéaire.</li>",
+        "<li>Supposons que \\(dim(E)=n\\) ; \\(E\\) admet une base \\(B_E=\\{\\mathbf{e}_1, \\dots, \\mathbf{e}_n  \\}\\).</li>",
+        "<li>\\(ker(f)\\) est un sous-espace vectoriel de \\(E\\), de dimension \\(dim(ker(f))=p \\leq n\\), et admet donc une base \\(K=\\{\\mathbf{k}_1, \\dots, \\mathbf{k}_p  \\}\\).</li>",
+        "<li>Soit \\(G=\\{ f(\\mathbf{e}_1), \\dots, f(\\mathbf{e}_n) \\}\\) une famille génératrice de \\(Im(f)\\).",
+        "<ul>",
+        "<li>Pour s'en convaincre, il suffit de considérer que, par définition, \\( \\forall \\mathbf{u}\\in E,\\; \\exists (\\lambda_1, \\dots \\lambda_n), \\; \\mathbf{u} = \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_n\\mathbf{e}_n  \\).</li>",
+        "<li> Donc par linéarité de \\(f\\), \\( f(\\mathbf{u}) = f(\\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_n\\mathbf{e}_n) = \\lambda_1 f(\\mathbf{e}_1) + \\dots + \\lambda_n f(\\mathbf{e}_n) \\).</li>",
+        "</ul>",
+        "</li>",
+        "<li> Il existe donc une sous-famille \\(I\\) de \\(G\\) qui forme une base de \\(Im(f)\\), que l'on indexera arbitrairement comme étant les \\(dim(Im(f))=q\\) premiers éléments de \\(G\\), soit \\(I=\\{f(\\mathbf{e}_1), \\dots, f(\\mathbf{e}_q)  \\}\\). </li>",
+        "</ul>",
+        "Montrons que \\(A = \\{\\mathbf{v}_1, \\dots, \\mathbf{v}_p, \\mathbf{e}_1, \\dots, \\mathbf{e}_q  \\}  \\) est une base de \\(E\\).",
+        "<ul>",
+        "<li> Montrons que \\(A\\) est libre.",
+        "<ul>",
+        "<li>\\(A\\) est libre si et seulement si (Expression 1) \\(  \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + \\mu_1\\mathbf{v}_1 + \\dots + \\mu_p\\mathbf{v}_p = \\mathbf{0} \\iff \\forall i,\\; \\lambda_i = 0 \\;\\text{et}\\; \\forall i, \\; \\mu_i = 0 \\).</li>",
+        "<li>Par linéarité de \\(f\\), \\( f( \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + \\mu_1\\mathbf{v}_1 + \\dots + \\mu_p\\mathbf{v}_p) = f(\\mathbf{0}) = \\mathbf{0}   \\). </li>",
+        "<li>Ce qui par linéarité de \\(f\\) équivaut à    \\(  \\lambda_1 f(\\mathbf{e}_1) + \\dots + \\lambda_q f(\\mathbf{e}_q) + \\mu_1 f(\\mathbf{v}_1) + \\dots + \\mu_p f(\\mathbf{v}_p) = \\mathbf{0}   \\).     </li>",
+        "<li>Or, puisque \\(\\mathbf{v}_i \\in ker(f)\\), \\( f(\\mathbf{v}_i) = \\mathbf{0} \\).</li>",
+        "<li>On obtient donc \\(  \\lambda_1 f(\\mathbf{e}_1) + \\dots + \\lambda_q f(\\mathbf{e}_q) = \\mathbf{0}   \\).</li>",
+        "<li>Or, puisque \\( f(\\mathbf{e}_1), \\dots, f(\\mathbf{e}_q) \\in I \\), \\( f(\\mathbf{e}_1), \\dots, f(\\mathbf{e}_q)\\) sont linéairement indépendants, ce qui signifie que \\(  \\lambda_1 f(\\mathbf{e}_1) + \\dots + \\lambda_q f(\\mathbf{e}_q) = \\mathbf{0} \\iff \\forall i,\\; \\lambda_i = 0  \\). </li>",
+        "<li>Ceci engendre dans l'Expression 1 que \\( \\mu_1\\mathbf{v}_1 + \\dots + \\mu_p\\mathbf{v}_p = \\mathbf{0}  \\). </li>",
+        "<li>Et comme \\(\\mathbf{v}_1,\\dots,\\mathbf{v}_p \\in K\\) sont eux-même linéairement indépendants, cela montre que \\(\\forall i,\\; \\mu_i = 0\\). </li>",
+        "</ul>",
+        "</li>",
+        "<li>Montrons que \\(A\\) est génératrice de \\(E\\), c'est à dire que \\( \\forall \\mathbf{u} \\in E, \\; \\exists \\lambda_1,\\dots,\\lambda_q,\\; \\exists  \\mu_1,\\dots,\\mu_p, \\; \\mathbf{u} = \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + \\mu_1\\mathbf{v}_1 + \\dots + \\mu_p\\mathbf{v}_p \\).",
+        "<ul>",
+        "<li>On sait que \\(I\\) génère \\(Im(f)\\), soit : (Expression 2) \\( \\exists \\lambda_1,\\dots,\\lambda_q, \\; f(\\mathbf{u}) = \\lambda_1f(\\mathbf{e}_1) + \\dots + \\lambda_qf(\\mathbf{e}_q) \\). </li>",
+        "<li>Par linéarité de \\(f\\), \\( f(\\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + (-1)\\mathbf{u}) = \\mathbf{0} \\). </li>",
+        "<li>Par conséquent, \\( \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + (-1)\\mathbf{u} \\in ker(f)  \\), donc : \\( \\exists  \\alpha_1,\\dots,\\alpha_p, \\; \\alpha_1\\mathbf{v}_1 + \\dots + \\alpha_p\\mathbf{v}_p = \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + (-1)\\mathbf{u} \\). </li>",
+        "<li>On obtient alors : \\( \\mathbf{u} = \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + (-\\alpha_1)\\mathbf{v}_1 + \\dots + (-\\alpha_p)\\mathbf{v}_p \\), et en posant \\(\\mu_i = -\\alpha_i\\), on retrouve l'Expression 2. </li>",
+        "</ul>",
+        "</li>",
+        "</ul>",
+        "Par conséquent, \\(A\\) est libre et génératrice de \\(E\\), donc une base de \\(E\\) de dimension \\(n = p + q\\), donc \\(dim(E)=dim(Im(f))+dim(ker(f)) = rg(f) +dim(ker(f)) \\). \\(\\blacksquare\\)"
+      ],
+      "english": [
+        "Proof",
+        "<ul>",
+        "<li>Let \\(f:E\\rightarrow F\\) a linear map.</li>",
+        "<li>Let's suppose that \\(dim(E)=n\\); \\(E\\) has a base \\(B_E=\\{\\mathbf{e}_1, \\dots, \\mathbf{e}_n  \\}\\).</li>",
+        "<li>\\(ker(f)\\) is a subspace of \\(E\\), of dimension \\(dim(ker(f))=p \\leq n\\), and has a base \\(K=\\{\\mathbf{k}_1, \\dots, \\mathbf{k}_p  \\}\\).</li>",
+        "<li>Let \\(G=\\{ f(\\mathbf{e}_1), \\dots, f(\\mathbf{e}_n) \\}\\) a generating set for \\(Im(f)\\).",
+        "<ul>",
+        "<li>For proof, it suffices to consider that, by definition, \\( \\forall \\mathbf{u}\\in E,\\; \\exists (\\lambda_1, \\dots \\lambda_n), \\; \\mathbf{u} = \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_n\\mathbf{e}_n  \\).</li>",
+        "<li> Therefore, by linearity of \\(f\\), \\( f(\\mathbf{u}) = f(\\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_n\\mathbf{e}_n) = \\lambda_1 f(\\mathbf{e}_1) + \\dots + \\lambda_n f(\\mathbf{e}_n) \\).</li>",
+        "</ul>",
+        "</li>",
+        "<li> Therefore, there exist a subset \\(I\\) of \\(G\\) that is a base for \\(Im(f)\\), that we will arbitrarily index as the \\(dim(Im(f))=q\\) first elements of \\(G\\), thus \\(I=\\{f(\\mathbf{e}_1), \\dots, f(\\mathbf{e}_q)  \\}\\). </li>",
+        "</ul>",
+        "Let's show that \\(A = \\{\\mathbf{v}_1, \\dots, \\mathbf{v}_p, \\mathbf{e}_1, \\dots, \\mathbf{e}_q  \\}  \\) is a base for \\(E\\).",
+        "<ul>",
+        "<li> Let's show that \\(A\\) is free.",
+        "<ul>",
+        "<li>\\(A\\) is free if and only if (Expression 1) \\(  \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + \\mu_1\\mathbf{v}_1 + \\dots + \\mu_p\\mathbf{v}_p = \\mathbf{0} \\iff \\forall i,\\; \\lambda_i = 0 \\;\\text{and}\\; \\forall i, \\; \\mu_i = 0 \\).</li>",
+        "<li>By linearity of \\(f\\), \\( f( \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + \\mu_1\\mathbf{v}_1 + \\dots + \\mu_p\\mathbf{v}_p) = f(\\mathbf{0}) = \\mathbf{0}   \\). </li>",
+        "<li>Which by linearity of \\(f\\) equates to   \\(  \\lambda_1 f(\\mathbf{e}_1) + \\dots + \\lambda_q f(\\mathbf{e}_q) + \\mu_1 f(\\mathbf{v}_1) + \\dots + \\mu_p f(\\mathbf{v}_p) = \\mathbf{0}   \\).     </li>",
+        "<li>Then, since \\(\\mathbf{v}_i \\in ker(f)\\), \\( f(\\mathbf{v}_i) = \\mathbf{0} \\).</li>",
+        "<li>Which leads to \\(  \\lambda_1 f(\\mathbf{e}_1) + \\dots + \\lambda_q f(\\mathbf{e}_q) = \\mathbf{0}   \\).</li>",
+        "<li>And, since \\( f(\\mathbf{e}_1), \\dots, f(\\mathbf{e}_q) \\in I \\), \\( f(\\mathbf{e}_1), \\dots, f(\\mathbf{e}_q)\\) are linearly independent, which means that \\(  \\lambda_1 f(\\mathbf{e}_1) + \\dots + \\lambda_q f(\\mathbf{e}_q) = \\mathbf{0} \\iff \\forall i,\\; \\lambda_i = 0  \\). </li>",
+        "<li>This implies in Expression 1 that \\( \\mu_1\\mathbf{v}_1 + \\dots + \\mu_p\\mathbf{v}_p = \\mathbf{0}  \\). </li>",
+        "<li>and since \\(\\mathbf{v}_1,\\dots,\\mathbf{v}_p \\in K\\) are also linearly independent, this shows that \\(\\forall i,\\; \\mu_i = 0\\). </li>",
+        "</ul>",
+        "</li>",
+        "<li>Let's show that \\(A\\) generates \\(E\\), namely \\( \\forall \\mathbf{u} \\in E, \\; \\exists \\lambda_1,\\dots,\\lambda_q,\\; \\exists  \\mu_1,\\dots,\\mu_p, \\; \\mathbf{u} = \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + \\mu_1\\mathbf{v}_1 + \\dots + \\mu_p\\mathbf{v}_p \\).",
+        "<ul>",
+        "<li>We know that \\(I\\) generates \\(Im(f)\\), thus: (Expression 2) \\( \\exists \\lambda_1,\\dots,\\lambda_q, \\; f(\\mathbf{u}) = \\lambda_1f(\\mathbf{e}_1) + \\dots + \\lambda_qf(\\mathbf{e}_q) \\). </li>",
+        "<li>By linearity of \\(f\\), \\( f(\\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + (-1)\\mathbf{u}) = \\mathbf{0} \\). </li>",
+        "<li>Therefore, \\( \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + (-1)\\mathbf{u} \\in ker(f)  \\), thus: \\( \\exists  \\alpha_1,\\dots,\\alpha_p, \\; \\alpha_1\\mathbf{v}_1 + \\dots + \\alpha_p\\mathbf{v}_p = \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + (-1)\\mathbf{u} \\). </li>",
+        "<li>We then get: \\( \\mathbf{u} = \\lambda_1\\mathbf{e}_1 + \\dots + \\lambda_q\\mathbf{e}_q + (-\\alpha_1)\\mathbf{v}_1 + \\dots + (-\\alpha_p)\\mathbf{v}_p \\), and if we set \\(\\mu_i = -\\alpha_i\\),  we find back Expression 2. </li>",
+        "</ul>",
+        "</li>",
+        "</ul>",
+        "Therefore, \\(A\\) is free and generates \\(E\\), and consequently is a base for \\(E\\) of dimension \\(n = p + q\\), thus \\(dim(E)=dim(Im(f))+dim(ker(f)) = Rank(f) + Nullity(f) \\). \\(\\blacksquare\\)"
+      ]
+    }
+  }
+}

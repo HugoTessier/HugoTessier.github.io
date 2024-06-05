@@ -12,5 +12,19 @@
     "https://en.wikipedia.org/wiki/Rank_(linear_algebra)"
   ],
   "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Soit \\(A\\) une matrice à valeurs dans un corps commutatif de scalaires \\(K\\) ; son rang \\(rg(A)\\) correspond au nombre de vecteurs colonnes (ou lignes) linéairement indépendants.",
+        "Ce nombre est aussi égal à la dimension du sous-espace vectoriel engendré par ces mêmes vecteurs.",
+        "Le rang d'une application linéaire correspond au rang de la matrice qui le représente, et équivaut donc à la dimension de son image."
+      ],
+      "english": [
+        "Definition",
+        "Let \\(A\\) be a matrix with values from a field of scalars \\(K\\); its rank \\(rank(A)\\) corresponds to then number of its linearly independent column (or row) vectors.",
+        "This number is also equal to the dimension of the subspace spanned by those same vectors.",
+        "The rank of a linear map corresponds to that of the matrix that represent it, and equates the dimension of its image."
+      ]
+    }
   }
 }
