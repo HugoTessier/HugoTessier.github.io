@@ -15,5 +15,27 @@
     "https://en.wikipedia.org/wiki/Algebraic_structure"
   ],
   "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "On appelle tout couple \\( (G,\\star) \\) où \\(G\\) est un ensemble et \\(\\star\\) est une loi de composition interne telle que :",
+        "<ul>",
+        "<li>La loi est associative : \\( \\forall (x,y,z)\\in G^3,\\; x\\star y\\times z = (x\\star y)\\star z = x \\star (y\\star z)\\) ;</li>",
+        "<li>Il existe un élément \\(e\\) appelé élément neutre de \\(G\\) tel que : \\( \\forall x \\in G, \\; x\\star e = e \\star x = x  \\) ; </li>",
+        "<li>Pour tout élément \\(x\\), il existe un élément \\(y\\), dit symétrique de \\(x\\), tel que : \\( x\\star y = y \\star x = e \\).</li>",
+        "</ul>",
+        "Si, de plus, la loi \\(\\star\\) est commutative, on dit que \\( (G,\\star) \\) est un groupe commutatif ou un groupe abélien."
+      ],
+      "english": [
+        "Definition",
+        "We call any couple \\( (G,\\star) \\) where \\(G\\) is a set and \\(\\star\\) is a binary operator such that:",
+        "<ul>",
+        "<li>The operator is associative: \\( \\forall (x,y,z)\\in G^3,\\; x\\star y\\times z = (x\\star y)\\star z = x \\star (y\\star z)\\) ;</li>",
+        "<li>There exist an element \\(e\\) called neutral element of \\(G\\) such that: \\( \\forall x \\in G, \\; x\\star e = e \\star x = x  \\) ; </li>",
+        "<li>For any \\(x\\), there exist \\(y\\), called the symmetric of \\(x\\), such that: \\( x\\star y = y \\star x = e \\).</li>",
+        "</ul>",
+        "If, on top of that, the operator \\(\\star\\) is commutative, then \\( (G,\\star) \\) is a commutative group, or an abelian group."
+      ]
+    }
   }
 }

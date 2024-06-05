@@ -7,7 +7,7 @@
   },
   "edge_to": [
     "field",
-    "abelian_group"
+    "group"
   ],
   "links": [
     "https://en.wikipedia.org/wiki/Vector_space",

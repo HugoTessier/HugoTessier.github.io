@@ -6,7 +6,7 @@
     "french": "Anneau"
   },
   "edge_to": [
-    "abelian_group"
+    "group"
   ],
   "links": [
     "https://en.wikipedia.org/wiki/Ring_(mathematics)",
@@ -22,8 +22,8 @@
         "On appelle anneau tout triplet \\((A,+,\\times)\\) où \\(A\\) est un ensemble et + et \\(\\times\\) des lois de composition internes telles que :",
         "<ul>",
         "<li>\\((A,+)\\) soit un groupe abélien dont le neutre se note \\(0_A\\) et s'appelle l'élement nul ;</li>",
-        "<li>la loi \\(\\times\\) est associative ;</li>",
-        "<li>Il existe un élément \\(1_A\\) tel que \\(\\forall x \\in A,\\; 1_A\\times x=x\\times 1_A=x\\)</li>",
+        "<li>la loi \\(\\times\\) est associative : \\( \\forall (x,y,z)\\in A^3,\\; x\\times y\\times z = (x\\times y)\\times z = x \\times (y\\times z)\\) ;</li>",
+        "<li>Il existe un élément \\(1_A\\) tel que \\(\\forall x \\in A,\\; 1_A\\times x=x\\times 1_A=x\\) ;</li>",
         "<li>La multiplication est distributive par rapport à l'addition, c'est à dire :</li>",
         "$$ \\forall (x,y,z) \\in A^3,\\; x\\times(y+z)=(x\\times y) +(x\\times z) \\quad\\text{et}\\quad (y+z)\\times x = (y\\times x)+(z\\times x)$$",
         "</ul>",
@@ -34,8 +34,8 @@
         "We call ring any triplet \\((A,+,\\times)\\) where \\(A\\) is a set and + and \\(\\times\\) are binary operators such that:",
         "<ul>",
         "<li>\\((A,+)\\) is an abelian group whose neutral element is denoted \\(0_A\\);</li>",
-        "<li>the operator \\(\\times\\) is associative ;</li>",
-        "<li>There exist an element \\(1_A\\) such that \\(\\forall x \\in A,\\; 1_A\\times x=x\\times 1_A=x\\)</li>",
+        "<li>the operator \\(\\times\\) is associative: \\( \\forall (x,y,z)\\in A^3,\\; x\\times y\\times z = (x\\times y)\\times z = x \\times (y\\times z)\\);</li>",
+        "<li>There exist an element \\(1_A\\) such that \\(\\forall x \\in A,\\; 1_A\\times x=x\\times 1_A=x\\);</li>",
         "<li>The multiplication is distributive with respect to the addition, namely:</li>",
         "$$ \\forall (x,y,z) \\in A^3,\\; x\\times(y+z)=(x\\times y) +(x\\times z) \\quad\\text{and}\\quad (y+z)\\times x = (y\\times x)+(z\\times x)$$",
         "</ul>",

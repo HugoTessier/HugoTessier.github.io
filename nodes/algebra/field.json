@@ -7,7 +7,7 @@
   },
   "edge_to": [
     "ring",
-    "abelian_group"
+    "group"
   ],
   "links": [
     "https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique",

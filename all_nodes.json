@@ -14,7 +14,6 @@
     "./nodes/algebra/row_and_column_space.json",
     "./nodes/algebra/linear_subspace.json",
     "./nodes/algebra/rank.json",
-    "./nodes/algebra/abelian_group.json",
     "./nodes/algebra/linear_span.json",
     "./nodes/algebra/field.json",
     "./nodes/algebra/kernel.json"
