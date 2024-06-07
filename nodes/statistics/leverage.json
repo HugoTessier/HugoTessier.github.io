@@ -3,7 +3,7 @@
   "field": "statistics",
   "label": {
     "english": "Leverage",
-    "french": "Point Levier"
+    "french": "Levier"
   },
   "edge_to": [
     "hat_matrix"

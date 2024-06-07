@@ -1,0 +1,29 @@
+{
+  "id": "euclidean_space",
+  "field": "algebra",
+  "label": {
+    "english": "Euclidean space",
+    "french": "Espace euclidien"
+  },
+  "edge_to": [
+    "inner_product_space"
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Espace_pr%C3%A9hilbertien",
+    "https://en.wikipedia.org/wiki/Inner_product_space"
+  ],
+  "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Un espace euclidien est un espace préhilbertien à valeurs réelles et de dimension finie.",
+        "Il est usuellement (mais pas nécessairement) muni du produit scalaire euclidien : \\(\\forall \\mathbf{x},\\mathbf{y} \\in R^n,\\; \\langle \\mathbf{x},\\mathbf{y} \\rangle = \\sum_{k=1}^n x_ky_k \\)"
+      ],
+      "english": [
+        "Definition",
+        "A Euclidean space is a real-valued inner-product space of finite dimension.",
+        "It is usually (but not necessarily) equipped with a euclidean dot-product (also called inner product): \\(\\forall \\mathbf{x},\\mathbf{y} \\in R^n,\\; \\langle \\mathbf{x},\\mathbf{y} \\rangle = \\sum_{k=1}^n x_ky_k \\)"
+      ]
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "field": "statistics",
   "label": {
     "english": "Hat Matrix",
-    "french": "Matrice de projection"
+    "french": "Matrice de chapeau"
   },
   "edge_to": [
     "design_matrix",
@@ -15,5 +15,19 @@
     "https://en.wikipedia.org/wiki/Projection_matrix"
   ],
   "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Soit \\(\\mathbf{y}\\) le vecteur des variables à prédire, et \\(\\mathbf{\\hat{y}}\\) le vecteur des prédictions correspondantes pour un modèle.",
+        "La matrice de projection est la matrice \\(\\mathbf{P}\\) tel que \\( \\mathbf{\\hat{y}} = \\mathbf{P}\\mathbf{y}  \\).",
+        "Elle est aussi surnommée matrice de chapeau, puisqu'elle met semble mettre un chapeau à \\(\\mathbf{y}\\)."
+      ],
+      "english": [
+        "Definition",
+        "Let \\(\\mathbf{y}\\) be the vector of response values to predict, and \\(\\mathbf{\\hat{y}}\\) the vector of corresponding fitted values given by a model.",
+        "The projection matrix is \\(\\mathbf{P}\\) such that \\( \\mathbf{\\hat{y}} = \\mathbf{P}\\mathbf{y}  \\).",
+        "It is also named a hat matrix, since it literally puts a hat on \\(\\mathbf{y}\\). "
+      ]
+    }
   }
 }

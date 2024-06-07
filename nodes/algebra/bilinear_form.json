@@ -1,0 +1,38 @@
+{
+  "id": "bilinear_form",
+  "field": "algebra",
+  "label": {
+    "english": "Bilinear form",
+    "french": "Forme bilinéaire"
+  },
+  "edge_to": [
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Forme_bilin%C3%A9aire",
+    "https://en.wikipedia.org/wiki/Bilinear_form"
+  ],
+  "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Soit \\(E\\) un espace vectoriel et \\(K\\) un corps commutatif.",
+        "Une forme bilinéaire est une application de la forme \\(B: E\\times E \\rightarrow K\\) qui se comporte de façon linéaire pour chacun de ses arguments.",
+        "C'est à dire que, pour  \\(\\mathbf{u}\\), \\(\\mathbf{v}\\) et \\(\\mathbf{w}\\) trois vecteurs de \\(E\\) et \\(\\lambda\\) un scalaire dans \\(K\\) : ",
+        "<ul>",
+        "<li>\\(B(\\mathbf{u}+\\mathbf{v}, \\mathbf{w}) = B(\\mathbf{u}, \\mathbf{w}) + B(\\mathbf{v}, \\mathbf{w})\\) et \\(B(\\lambda\\mathbf{u}, \\mathbf{v}) = \\lambda B(\\mathbf{u}, \\mathbf{v})\\)</li>",
+        "<li>\\(B(\\mathbf{u}, \\mathbf{v}+\\mathbf{w}) = B(\\mathbf{u}, \\mathbf{v}) + B(\\mathbf{u}, \\mathbf{w})\\) et \\(B(\\mathbf{u}, \\lambda\\mathbf{v}) = \\lambda B(\\mathbf{u}, \\mathbf{v})\\)</li>",
+        "</ul>"
+      ],
+      "english": [
+        "Definition",
+        "Let \\(E\\) a vector space and \\(K\\) a field.",
+        "A bilinear form is a mapping \\(B: E\\times E \\rightarrow K\\) that behaves linearly for each of its arguments.",
+        "This means, for  \\(\\mathbf{u}\\), \\(\\mathbf{v}\\) and \\(\\mathbf{w}\\) three vectors of \\(E\\) and \\(\\lambda\\) a scalar in \\(K\\): ",
+        "<ul>",
+        "<li>\\(B(\\mathbf{u}+\\mathbf{v}, \\mathbf{w}) = B(\\mathbf{u}, \\mathbf{w}) + B(\\mathbf{v}, \\mathbf{w})\\) and \\(B(\\lambda\\mathbf{u}, \\mathbf{v}) = \\lambda B(\\mathbf{u}, \\mathbf{v})\\)</li>",
+        "<li>\\(B(\\mathbf{u}, \\mathbf{v}+\\mathbf{w}) = B(\\mathbf{u}, \\mathbf{v}) + B(\\mathbf{u}, \\mathbf{w})\\) and \\(B(\\mathbf{u}, \\lambda\\mathbf{v}) = \\lambda B(\\mathbf{u}, \\mathbf{v})\\)</li>",
+        "</ul>"
+      ]
+    }
+  }
+}

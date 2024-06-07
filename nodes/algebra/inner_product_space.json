@@ -1,0 +1,28 @@
+{
+  "id": "inner_product_space",
+  "field": "algebra",
+  "label": {
+    "english": "Inner product space",
+    "french": "Espace préhilbertien"
+  },
+  "edge_to": [
+    "dot_product",
+    "vector_space"
+  ],
+  "links": [
+    "https://fr.wikipedia.org/wiki/Espace_pr%C3%A9hilbertien",
+    "https://en.wikipedia.org/wiki/Inner_product_space"
+  ],
+  "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Un espace préhilbertien est défini comme un espace vectoriel réel ou complexe muni d'un produit scalaire."
+      ],
+      "english": [
+        "Definition",
+        "An inner product space is defined as a real or complex valued vector spaced equipped with an inner product."
+      ]
+    }
+  }
+}

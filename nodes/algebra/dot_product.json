@@ -1,0 +1,39 @@
+{
+  "id": "dot_product",
+  "field": "algebra",
+  "label": {
+    "english": "Dot product",
+    "french": "Produit scalaire"
+  },
+  "edge_to": [
+    "bilinear_form"
+  ],
+  "links": [
+    "https://en.wikipedia.org/wiki/Dot_product",
+    "https://fr.wikipedia.org/wiki/Produit_scalaire",
+    "https://sma.epfl.ch/~hessbell/alglin/AlgLin0607_files/ProduitsScalaires.pdf"
+  ],
+  "articles": {
+    "definition": {
+      "french": [
+        "Définition",
+        "Soit \\(E\\) un espace vectoriel à valeur dans ℝ ou ℂ.",
+        "Un produit scalaire sur \\(E\\) est une forme bilinéaire, notée \\( \\langle \\cdot, \\cdot \\rangle \\), qui est pour tout \\(\\mathbf{u}\\) et \\(\\mathbf{u}\\) dans \\(E\\) :",
+        "<ul>",
+        "<li>est symmétrique : \\(  \\langle \\mathbf{u}, \\mathbf{v} \\rangle  = \\overline{\\langle \\mathbf{v}, \\mathbf{u} \\rangle}  \\) (le conjugué n'importe que dans le cas complexe) ;</li>",
+        "<li>et définie positive : \\(  \\langle \\mathbf{u}, \\mathbf{u} \\rangle  \\geq 0  \\).</li>",
+        "</ul>"
+      ],
+      "english": [
+        "Definition",
+        "Let \\(E\\) a vector space with values in ℝ ou ℂ.",
+        "A dot (or scalar) product on \\(E\\) is a bilinear form, denoted \\( \\langle \\cdot, \\cdot \\rangle \\), that for any \\(\\mathbf{u}\\) and \\(\\mathbf{u}\\) in \\(E\\) :",
+        "<ul>",
+        "<li>is symmetrical : \\(  \\langle \\mathbf{u}, \\mathbf{v} \\rangle  = \\overline{\\langle \\mathbf{v}, \\mathbf{u} \\rangle}  \\) (conjugation only matters in the complex case) ;</li>",
+        "<li>and definite positive : \\(  \\langle \\mathbf{u}, \\mathbf{u} \\rangle  \\geq 0  \\).</li>",
+        "</ul>",
+        "In the case of Euclidean space, we may call it an inner product."
+      ]
+    }
+  }
+}
